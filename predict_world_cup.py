@@ -19,6 +19,7 @@ def main() -> None:
     target = df_features["winner"]
 
     modelo, _, _ = entrenar_modelo(features, target)
+    accuracy = modelo.metrics["accuracy"]
 
     grupos = {
         "A": ["Argentina", "Brasil", "Uruguay", "Colombia"],
@@ -32,6 +33,7 @@ def main() -> None:
     with (output_dir / "prediccion_mundial_2026.json").open("w", encoding="utf-8") as fh:
         json.dump(resultado, fh, ensure_ascii=False, indent=2)
 
+    print(f"Precisión del modelo: {accuracy:.3f}")
     print("Predicción generada en outputs/prediccion_mundial_2026.json")
     print(json.dumps(resultado, ensure_ascii=False, indent=2))
 
