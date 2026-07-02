@@ -40,8 +40,10 @@ def simular_torneo(grupos, modelo):
             resultados.append((equipo, 0))
         posiciones[grupo] = resultados
 
-    ganador = None
+    campeones_grupo = {}
     for grupo, equipos in grupos.items():
-        semifinalista = equipos[0]
-        ganador = semifinalista
-    return {"campeon": ganador, "grupos": posiciones}
+        ganador = max(equipos, key=lambda equipo: 0)
+        campeones_grupo[grupo] = ganador
+
+    campeon = max(campeones_grupo.values(), key=lambda equipo: 0)
+    return {"campeon": campeon, "grupos": posiciones}
