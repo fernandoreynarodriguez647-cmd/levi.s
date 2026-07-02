@@ -1,5 +1,5 @@
 {
-  "campeon": "Corea del Sur",
+  "campeon": "Argentina",
   "grupos": {
     "A": [
       [
@@ -11,17 +11,21 @@
         0
       ],
       [
-        "Uruguay",
+        "Colombia",
         0
       ],
       [
-        "Colombia",
+        "Ecuador",
         0
       ]
     ],
     "B": [
       [
-        "Francia",
+        "Paraguay",
+        0
+      ],
+      [
+        "Uruguay",
         0
       ],
       [
@@ -29,35 +33,121 @@
         0
       ],
       [
-        "España",
-        0
-      ],
-      [
-        "Inglaterra",
+        "Austria",
         0
       ]
     ],
     "C": [
       [
-        "Países Bajos",
-        0
-      ],
-      [
-        "Portugal",
-        0
-      ],
-      [
         "Bélgica",
         0
       ],
       [
-        "Japón",
+        "Croacia",
+        0
+      ],
+      [
+        "Escocia",
+        0
+      ],
+      [
+        "España",
         0
       ]
     ],
     "D": [
       [
-        "Corea del Sur",
+        "Francia",
+        0
+      ],
+      [
+        "Inglaterra",
+        0
+      ],
+      [
+        "Noruega",
+        0
+      ],
+      [
+        "Países Bajos",
+        0
+      ]
+    ],
+    "E": [
+      [
+        "Portugal",
+        0
+      ],
+      [
+        "Suecia",
+        0
+      ],
+      [
+        "Suiza",
+        0
+      ],
+      [
+        "Turquía",
+        0
+      ]
+    ],
+    "F": [
+      [
+        "Chequia",
+        0
+      ],
+      [
+        "Bosnia y Herzegovina",
+        0
+      ],
+      [
+        "Canadá",
+        0
+      ],
+      [
+        "Estados Unidos",
+        0
+      ]
+    ],
+    "G": [
+      [
+        "México",
+        0
+      ],
+      [
+        "Curazao",
+        0
+      ],
+      [
+        "Haití",
+        0
+      ],
+      [
+        "Panamá",
+        0
+      ]
+    ],
+    "H": [
+      [
+        "Argelia",
+        0
+      ],
+      [
+        "Cabo Verde",
+        0
+      ],
+      [
+        "Costa de Marfil",
+        0
+      ],
+      [
+        "Egipto",
+        0
+      ]
+    ],
+    "I": [
+      [
+        "Ghana",
         0
       ],
       [
@@ -65,13 +155,117 @@
         0
       ],
       [
-        "Estados Unidos",
+        "RD Congo",
         0
       ],
       [
-        "México",
+        "Senegal",
+        0
+      ]
+    ],
+    "J": [
+      [
+        "Sudáfrica",
+        0
+      ],
+      [
+        "Túnez",
+        0
+      ],
+      [
+        "Arabia Saudí",
+        0
+      ],
+      [
+        "Australia",
+        0
+      ]
+    ],
+    "K": [
+      [
+        "Irán",
+        0
+      ],
+      [
+        "Iraq",
+        0
+      ],
+      [
+        "Japón",
+        0
+      ],
+      [
+        "Jordania",
+        0
+      ]
+    ],
+    "L": [
+      [
+        "Qatar",
+        0
+      ],
+      [
+        "República de Corea",
+        0
+      ],
+      [
+        "Uzbekistán",
+        0
+      ],
+      [
+        "Nueva Zelanda",
         0
       ]
     ]
-  }
+  },
+  "dieciseisavos": [
+    "Argentina",
+    "Paraguay",
+    "Bélgica",
+    "Francia",
+    "Portugal",
+    "Chequia",
+    "México",
+    "Argelia",
+    "Ghana",
+    "Sudáfrica",
+    "Irán",
+    "Qatar"
+  ],
+  "octavos": [
+    "Argentina",
+    "Paraguay",
+    "Bélgica",
+    "Francia",
+    "Portugal",
+    "Chequia",
+    "México",
+    "Argelia",
+    "Ghana",
+    "Sudáfrica",
+    "Irán",
+    "Qatar"
+  ],
+  "cuartos": [
+    "Argentina",
+    "Paraguay",
+    "Bélgica",
+    "Francia",
+    "Portugal",
+    "Chequia",
+    "México",
+    "Argelia",
+    "Ghana",
+    "Sudáfrica",
+    "Irán",
+    "Qatar"
+  ],
+  "semifinales": [
+    "Argentina",
+    "Paraguay"
+  ],
+  "final": [
+    "Argentina",
+    "Paraguay"
+  ]
 }

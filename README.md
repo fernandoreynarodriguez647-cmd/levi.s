@@ -34,6 +34,12 @@ Este proyecto implementa un pipeline de predicción para el Mundial 2026 usando 
    `pytest -q`
 5. Ejecutar la predicción:
    `python predict_world_cup.py`
+6. Abrir el dashboard:
+   `streamlit run app.py`
+
+## Despliegue
+- El dashboard puede ejecutarse en Streamlit Cloud o en un entorno con Python y Streamlit instalado.
+- El archivo principal de salida se genera automáticamente en `outputs/prediccion_mundial_2026.json`.
 
 ## Resultados
 El script principal genera el archivo:

@@ -1,8 +1,12 @@
 venv/
+.venv/
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 .ipynb_checkpoints/
 data/raw/*
 !data/raw/.gitkeep
 models/*.pkl
 .env
+.DS_Store

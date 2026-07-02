@@ -5,7 +5,7 @@ import pandas as pd
 from src.data_loader import crear_dataset_base
 from src.features import construir_features
 from src.models import entrenar_modelo
-from src.simulate_bracket import simular_torneo
+from src.simulate_bracket import construir_grupos_mundial, simular_torneo
 
 
 def main() -> None:
@@ -21,12 +21,7 @@ def main() -> None:
     modelo, _, _ = entrenar_modelo(features, target)
     accuracy = modelo.metrics["accuracy"]
 
-    grupos = {
-        "A": ["Argentina", "Brasil", "Uruguay", "Colombia"],
-        "B": ["Francia", "Alemania", "España", "Inglaterra"],
-        "C": ["Países Bajos", "Portugal", "Bélgica", "Japón"],
-        "D": ["Corea del Sur", "Marruecos", "Estados Unidos", "México"],
-    }
+    grupos = construir_grupos_mundial()
 
     resultado = simular_torneo(grupos, modelo)
 

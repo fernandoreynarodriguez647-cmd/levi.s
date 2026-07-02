@@ -3,7 +3,7 @@ import pandas as pd
 from src.data_loader import crear_dataset_base
 from src.features import construir_features
 from src.models import entrenar_modelo
-from src.simulate_bracket import simular_partido, simular_torneo
+from src.simulate_bracket import simular_partido, simular_torneo, construir_grupos_mundial
 
 
 def test_construir_features_agrega_columnas_relevantes():
@@ -43,3 +43,21 @@ def test_simulacion_de_torneo_devuelve_resultados():
 
     assert "campeon" in resultado
     assert resultado["campeon"] in sum(grupos.values(), [])
+    assert "dieciseisavos" in resultado
+    assert "octavos" in resultado
+    assert "cuartos" in resultado
+    assert "semifinales" in resultado
+    assert "final" in resultado
+    assert "partidos" in resultado
+    assert resultado["partidos"]
+    assert all({"ronda", "local", "visitante", "ganador"} <= set(partido.keys()) for partido in resultado["partidos"])
+
+
+def test_construir_grupos_mundial_incluye_los_48_equipos():
+    grupos = construir_grupos_mundial()
+    equipos = sum(grupos.values(), [])
+
+    assert len(grupos) == 12
+    assert len(equipos) == 48
+    assert "Argentina" in equipos
+    assert "Nueva Zelanda" in equipos
