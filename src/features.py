@@ -17,6 +17,10 @@ def construir_features(df_partidos: pd.DataFrame) -> pd.DataFrame:
     df["elo_diff"] = df["elo_home"] - df["elo_away"]
     df["form_diff"] = df["form_home"] - df["form_away"]
     df["goal_diff"] = df["goals_home"] - df["goals_away"]
+    df["goals_scored_diff"] = df["goals_home"] - df["goals_away"]
     df["home_advantage"] = 1
-    df["winner"] = (df["winner"] == df["home_team"]).astype(int)
+    df["rating_strength"] = (df["elo_home"] + df["elo_away"]) / 2
+    df["relative_strength"] = df["elo_home"] / (df["elo_away"] + 1)
+    df["target"] = (df["winner"] == df["home_team"]).astype(int)
+    df["winner"] = df["target"]
     return df

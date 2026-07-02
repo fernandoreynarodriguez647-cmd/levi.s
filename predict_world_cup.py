@@ -15,7 +15,7 @@ def main() -> None:
     df = crear_dataset_base()
     df_features = construir_features(df)
 
-    features = df_features[["elo_diff", "form_diff", "goal_diff", "home_advantage"]]
+    features = df_features[["elo_diff", "form_diff", "goal_diff", "home_advantage", "rating_strength", "relative_strength"]]
     target = df_features["winner"]
 
     modelo, _, _ = entrenar_modelo(features, target)
