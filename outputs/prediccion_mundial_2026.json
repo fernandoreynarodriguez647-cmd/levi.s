@@ -1,0 +1,77 @@
+{
+  "campeon": "Corea del Sur",
+  "grupos": {
+    "A": [
+      [
+        "Argentina",
+        0
+      ],
+      [
+        "Brasil",
+        0
+      ],
+      [
+        "Uruguay",
+        0
+      ],
+      [
+        "Colombia",
+        0
+      ]
+    ],
+    "B": [
+      [
+        "Francia",
+        0
+      ],
+      [
+        "Alemania",
+        0
+      ],
+      [
+        "España",
+        0
+      ],
+      [
+        "Inglaterra",
+        0
+      ]
+    ],
+    "C": [
+      [
+        "Países Bajos",
+        0
+      ],
+      [
+        "Portugal",
+        0
+      ],
+      [
+        "Bélgica",
+        0
+      ],
+      [
+        "Japón",
+        0
+      ]
+    ],
+    "D": [
+      [
+        "Corea del Sur",
+        0
+      ],
+      [
+        "Marruecos",
+        0
+      ],
+      [
+        "Estados Unidos",
+        0
+      ],
+      [
+        "México",
+        0
+      ]
+    ]
+  }
+}
