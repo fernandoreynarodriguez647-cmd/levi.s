@@ -33,8 +33,13 @@ def main() -> None:
     with (output_dir / "prediccion_mundial_2026.json").open("w", encoding="utf-8") as fh:
         json.dump(resultado, fh, ensure_ascii=False, indent=2)
 
+    print("=" * 50)
+    print("RESUMEN DE PREDICCIÓN DEL MUNDIAL 2026")
+    print("=" * 50)
     print(f"Precisión del modelo: {accuracy:.3f}")
-    print("Predicción generada en outputs/prediccion_mundial_2026.json")
+    print(f"Campeón previsto: {resultado['campeon']}")
+    print("Archivo generado: outputs/prediccion_mundial_2026.json")
+    print("=" * 50)
     print(json.dumps(resultado, ensure_ascii=False, indent=2))
 
 
