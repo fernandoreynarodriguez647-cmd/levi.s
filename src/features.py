@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import pandas as pd
+import numpy as np
 
 
 FEATURE_COLUMNS = [
@@ -10,6 +11,12 @@ FEATURE_COLUMNS = [
     "home_advantage",
     "rating_strength",
     "relative_strength",
+    "elo_squared",
+    "abs_elo_diff",
+    "avg_rating",
+    "rating_ratio",
+    "form_abs_diff",
+    "elo_power",
 ]
 
 
@@ -23,5 +30,11 @@ def construir_features(df_partidos: pd.DataFrame) -> pd.DataFrame:
     df["home_advantage"] = 1
     df["rating_strength"] = (df["elo_home"] + df["elo_away"]) / 2
     df["relative_strength"] = df["elo_home"] / (df["elo_away"] + 1)
+    df["elo_squared"] = (df["elo_diff"] ** 2) * np.sign(df["elo_diff"])
+    df["abs_elo_diff"] = np.abs(df["elo_diff"])
+    df["avg_rating"] = (df["elo_home"] + df["elo_away"]) / 2
+    df["rating_ratio"] = df["elo_home"] / (df["elo_away"] + 1)
+    df["form_abs_diff"] = np.abs(df["form_home"] - df["form_away"])
+    df["elo_power"] = np.tanh(df["elo_diff"] / 300)
     df["target"] = (df["winner"] == df["home_team"]).astype(int)
     return df[FEATURE_COLUMNS + ["target", "home_team", "away_team", "winner"]]
