@@ -1,10 +1,3 @@
-"""
-Funciones para cargar y unir las distintas fuentes de datos
-(histórico de partidos, ranking FIFA, Elo, plantillas, etc.).
-Si existen datos reales en `data/raw`, se usan para construir un dataset
-más representativo para entrenar y simular.
-"""
-
 from __future__ import annotations
 
 import json
@@ -34,7 +27,6 @@ TEAM_ALIASES = {
     "united states": "Estados Unidos",
     "usa": "Estados Unidos",
     "mexico": "México",
-    "mexico": "México",
 }
 
 
@@ -46,23 +38,18 @@ def _normalize_team_name(team: str) -> str:
     text = " ".join(text.split())
     if text in TEAM_ALIASES:
         return TEAM_ALIASES[text]
-    for alias, canonical in TEAM_ALIASES.items():
-        if alias in text:
-            return canonical
     return team.strip()
 
 
 def cargar_historico_partidos(path: str | Path | None = None) -> pd.DataFrame:
-    """Carga el CSV de histórico de partidos internacionales."""
     if path is None:
         path = DATA_DIR / "historico_partidos" / "results.csv"
     if not Path(path).exists():
-        return crear_dataset_base()
+        return pd.DataFrame()
     return pd.read_csv(path)
 
 
 def cargar_elo_ratings(path: str | Path | None = None) -> pd.DataFrame:
-    """Carga el JSON de ratings Elo por selección."""
     if path is None:
         path = DATA_DIR / "elo_ratings" / "elo_rankings.json"
     if not Path(path).exists():
@@ -73,7 +60,6 @@ def cargar_elo_ratings(path: str | Path | None = None) -> pd.DataFrame:
 
 
 def cargar_ranking_fifa(path: str | Path | None = None) -> pd.DataFrame:
-    """Carga el JSON del ranking FIFA."""
     if path is None:
         path = DATA_DIR / "ranking_fifa" / "fifa_rankings.json"
     if not Path(path).exists():
@@ -105,7 +91,6 @@ def _build_team_rating_map(elo_df: pd.DataFrame, fifa_df: pd.DataFrame) -> dict[
 
 
 def crear_dataset_base() -> pd.DataFrame:
-    """Construye un dataset realista a partir de los archivos de datos crudos."""
     partidos = cargar_historico_partidos()
     elo_df = cargar_elo_ratings()
     fifa_df = cargar_ranking_fifa()
@@ -113,14 +98,13 @@ def crear_dataset_base() -> pd.DataFrame:
 
     if partidos.empty:
         return pd.DataFrame(columns=[
-            "home_team", "away_team", "elo_home", "elo_away", "form_home", "form_away",
-            "goals_home", "goals_away", "winner"
+            "home_team", "away_team", "elo_home", "elo_away",
+            "form_home", "form_away", "goals_home", "goals_away", "winner"
         ])
 
     partidos = partidos.copy()
     partidos["date"] = pd.to_datetime(partidos["date"], errors="coerce")
     partidos = partidos.dropna(subset=["date"]).sort_values("date")
-    partidos = partidos.head(5000)
 
     history: dict[str, list[int]] = {}
     rows = []
@@ -141,8 +125,14 @@ def crear_dataset_base() -> pd.DataFrame:
         form_home = round(recent_form(home_team), 2)
         form_away = round(recent_form(away_team), 2)
 
-        goals_home = int(row.get("home_score", 0))
-        goals_away = int(row.get("away_score", 0))
+        try:
+            goals_home = int(row.get("home_score", 0) or 0)
+        except (ValueError, TypeError):
+            goals_home = 0
+        try:
+            goals_away = int(row.get("away_score", 0) or 0)
+        except (ValueError, TypeError):
+            goals_away = 0
         if goals_home > goals_away:
             winner = home_team
         elif goals_away > goals_home:
@@ -162,7 +152,10 @@ def crear_dataset_base() -> pd.DataFrame:
             "winner": winner,
         })
 
-        for team, result in [(home_team, 1 if goals_home > goals_away else 0 if goals_home == goals_away else -1), (away_team, 1 if goals_away > goals_home else 0 if goals_home == goals_away else -1)]:
+        for team, result in [
+            (home_team, 1 if goals_home > goals_away else 0 if goals_home == goals_away else -1),
+            (away_team, 1 if goals_away > goals_home else 0 if goals_home == goals_away else -1),
+        ]:
             history.setdefault(team, []).append(result)
 
     return pd.DataFrame(rows)

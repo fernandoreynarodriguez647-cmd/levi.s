@@ -1,46 +1,70 @@
-"""
-Simulación del bracket del Mundial: fase de grupos -> dieciseisavos ->
-octavos -> cuartos -> semifinales -> final, usando las probabilidades del modelo.
-"""
-
 from __future__ import annotations
 
 import random
+import itertools
+from typing import Any
 
 import pandas as pd
+import numpy as np
+
+from src.features import FEATURE_COLUMNS, construir_features
+from src.models import predecir_partido
+
+random.seed(42)
+np.random.seed(42)
 
 
-def simular_partido(equipo_a, equipo_b, modelo, features_fn):
-    """Simula un partido entre dos equipos usando el modelo entrenado."""
-    feature_row = features_fn({
-        "home_team": equipo_a,
-        "away_team": equipo_b,
-        "elo_home": 1800 + random.randint(-80, 80),
-        "elo_away": 1800 + random.randint(-80, 80),
-        "form_home": random.randint(0, 10),
-        "form_away": random.randint(0, 10),
+def simular_partido(
+    equipo_a: str,
+    equipo_b: str,
+    modelo: Any,
+    team_ratings: dict[str, float],
+) -> tuple[str, int, int]:
+    elo_a = team_ratings.get(equipo_a, 1500.0)
+    elo_b = team_ratings.get(equipo_b, 1500.0)
+
+    noise_a = random.randint(-40, 40)
+    noise_b = random.randint(-40, 40)
+    effective_elo_a = elo_a + noise_a
+    effective_elo_b = elo_b + noise_b
+
+    elo_diff = effective_elo_a - effective_elo_b
+    win_prob_elo = 1 / (1 + 10 ** (-elo_diff / 400))
+
+    form_a = 5.0 + elo_diff / 400
+    form_b = 5.0 - elo_diff / 400
+
+    row = pd.DataFrame([{
+        "elo_home": effective_elo_a,
+        "elo_away": effective_elo_b,
+        "form_home": min(max(form_a, 0), 10),
+        "form_away": min(max(form_b, 0), 10),
         "goals_home": 0,
         "goals_away": 0,
-    })
-    feature_names = getattr(modelo, "feature_names_in_", ["elo_diff", "form_diff", "goal_diff"])
-    features = pd.DataFrame([feature_row], columns=feature_names)
-    pred = modelo.predict_proba(features)[0][1]
-    return equipo_a if pred >= 0.5 else equipo_b
+        "winner": equipo_a,
+        "home_team": equipo_a,
+        "away_team": equipo_b,
+    }])
+    features_df = construir_features(row)
+    X = features_df[FEATURE_COLUMNS]
+
+    prob_a = predecir_partido(modelo, X)
+    blend = 0.6 * prob_a + 0.4 * win_prob_elo
+
+    expected_goals_a = 1.2 * blend
+    expected_goals_b = 1.2 * (1 - blend)
+
+    goals_a = np.random.poisson(expected_goals_a)
+    goals_b = np.random.poisson(expected_goals_b)
+
+    if goals_a == goals_b:
+        goals_a += 1
+
+    winner = equipo_a if goals_a > goals_b else equipo_b
+    return winner, goals_a, goals_b
 
 
-def _build_features(row):
-    return {
-        "elo_diff": row["elo_home"] - row["elo_away"],
-        "form_diff": row["form_home"] - row["form_away"],
-        "goal_diff": 0,
-        "home_advantage": 1,
-        "rating_strength": (row["elo_home"] + row["elo_away"]) / 2,
-        "relative_strength": row["elo_home"] / (row["elo_away"] + 1),
-    }
-
-
-def construir_grupos_mundial():
-    """Devuelve una distribución realista de los 48 equipos clasificados al Mundial 2026."""
+def construir_grupos_mundial() -> dict[str, list[str]]:
     equipos = {
         "CONMEBOL": [
             "Argentina", "Brasil", "Colombia", "Ecuador", "Paraguay", "Uruguay"
@@ -64,78 +88,128 @@ def construir_grupos_mundial():
         "OFC": ["Nueva Zelanda"],
     }
 
-    todos = []
-    for conf in ["CONMEBOL", "UEFA", "CONCACAF", "CAF", "AFC", "OFC"]:
-        todos.extend(equipos[conf])
-
+    todos = list(itertools.chain.from_iterable(equipos.values()))
     if len(todos) != 48:
         raise ValueError(f"Se esperaban 48 equipos, se encontraron {len(todos)}")
 
-    grupos = {}
+    grupos: dict[str, list[str]] = {}
     letras = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"]
-    for index, letra in enumerate(letras):
-        start = index * 4
-        end = start + 4
-        grupos[letra] = todos[start:end]
-
+    for idx, letra in enumerate(letras):
+        grupos[letra] = todos[idx * 4 : (idx + 1) * 4]
     return grupos
 
 
-def simular_torneo(grupos, modelo):
-    """Simula el torneo completo desde fase de grupos hasta la final."""
-    posiciones = {}
-    campeones_grupo = {}
-    partidos = []
-    for grupo, equipos in grupos.items():
-        resultados = []
-        for equipo in equipos:
-            resultados.append((equipo, 0))
-        posiciones[grupo] = resultados
-        ganador = equipos[0]
-        campeones_grupo[grupo] = ganador
+def _simular_grupo(
+    grupo_letra: str,
+    equipos: list[str],
+    modelo: Any,
+    team_ratings: dict[str, float],
+) -> tuple[list[tuple], str, str, list[dict]]:
+    puntos: dict[str, int] = {e: 0 for e in equipos}
+    gf: dict[str, int] = {e: 0 for e in equipos}
+    gc: dict[str, int] = {e: 0 for e in equipos}
+    partidos_grupo: list[dict] = []
 
-    dieciseisavos = []
-    octavos = []
-    cuartos = []
-    semifinales = []
+    for a, b in itertools.combinations(equipos, 2):
+        ganador, ga, gb = simular_partido(a, b, modelo, team_ratings)
+        partidos_grupo.append({
+            "ronda": f"Grupo {grupo_letra}",
+            "local": a, "visitante": b,
+            "ganador": ganador,
+            "goles_local": ga, "goles_visitante": gb,
+        })
+        gf[a] += ga; gc[a] += gb
+        gf[b] += gb; gc[b] += ga
+        if ganador == a:
+            puntos[a] += 3
+        elif ganador == b:
+            puntos[b] += 3
+        else:
+            puntos[a] += 1; puntos[b] += 1
 
-    for grupo, equipos in grupos.items():
-        dieciseisavos.append(campeones_grupo[grupo])
+    def sort_key(e):
+        dg = gf[e] - gc[e]
+        return (puntos[e], dg, gf[e])
 
-    for equipo in dieciseisavos:
-        octavos.append(equipo)
+    tabla = sorted(equipos, key=sort_key, reverse=True)
 
-    for equipo in octavos:
-        cuartos.append(equipo)
+    posiciones = [
+        (e, puntos[e], 3, puntos[e] // 3, 0, 3 - puntos[e] // 3, gf[e], gc[e], gf[e] - gc[e])
+        for e in tabla
+    ]
 
-    semifinales = cuartos[:2]
-    final = [semifinales[0], semifinales[1]]
-    campeon = final[0]
+    return posiciones, tabla[0], tabla[1], partidos_grupo
 
-    for ronda, equipos in [
-        ("16avos", dieciseisavos),
-        ("8avos", octavos),
-        ("Cuartos", cuartos),
-        ("Semifinales", semifinales),
-        ("Final", final),
-    ]:
-        if len(equipos) >= 2:
-            local, visitante = equipos[0], equipos[1]
-            ganador = simular_partido(local, visitante, modelo, _build_features)
-            partidos.append({
-                "ronda": ronda,
-                "local": local,
-                "visitante": visitante,
+
+def simular_torneo(
+    grupos: dict[str, list[str]],
+    modelo: Any,
+    team_ratings: dict[str, float] | None = None,
+) -> dict:
+    if team_ratings is None:
+        team_ratings = {}
+
+    posiciones_grupos: dict[str, list] = {}
+    campeones_grupo: dict[str, str] = {}
+    segundos_grupo: dict[str, str] = {}
+    terceros: list[tuple[str, int, int, int, str]] = []
+    partidos: list[dict] = []
+
+    for letra in sorted(grupos.keys()):
+        equipos = grupos[letra]
+        posiciones, primero, segundo, partidos_grupo = _simular_grupo(
+            letra, equipos, modelo, team_ratings
+        )
+        posiciones_grupos[letra] = posiciones
+        campeones_grupo[letra] = primero
+        segundos_grupo[letra] = segundo
+        partidos.extend(partidos_grupo)
+
+        tercero = posiciones[2]
+        terceros.append((tercero[0], tercero[1], tercero[6] - tercero[7], tercero[6], letra))
+
+    terceros.sort(key=lambda t: (t[1], t[2], t[3]), reverse=True)
+    mejores_terceros = terceros[:8]
+
+    ronda_32: list[str] = []
+    ronda_32.extend(campeones_grupo[g] for g in sorted(grupos.keys()))
+    ronda_32.extend(segundos_grupo[g] for g in sorted(grupos.keys()))
+    ronda_32.extend(t[0] for t in mejores_terceros)
+
+    def simular_ronda(equipos_ronda: list[str], nombre_ronda: str) -> list[str]:
+        ganadores: list[str] = []
+        partidos_ronda: list[dict] = []
+        for i in range(0, len(equipos_ronda), 2):
+            a = equipos_ronda[i]
+            b = equipos_ronda[i + 1] if i + 1 < len(equipos_ronda) else a
+            ganador, ga, gb = simular_partido(a, b, modelo, team_ratings)
+            ganadores.append(ganador)
+            partidos_ronda.append({
+                "ronda": nombre_ronda,
+                "local": a, "visitante": b,
                 "ganador": ganador,
+                "goles_local": ga, "goles_visitante": gb,
             })
+        partidos.extend(partidos_ronda)
+        return ganadores
+
+    ronda_16 = simular_ronda(ronda_32, "32avos (Ronda de 32)")
+    ronda_8 = simular_ronda(ronda_16, "16avos (Octavos)")
+    ronda_4 = simular_ronda(ronda_8, "8avos (Cuartos)")
+    ronda_2 = simular_ronda(ronda_4, "4avos (Semifinales)")
+    campeon_list = simular_ronda(ronda_2, "Final")
 
     return {
-        "campeon": campeon,
-        "grupos": posiciones,
-        "dieciseisavos": dieciseisavos,
-        "octavos": octavos,
-        "cuartos": cuartos,
-        "semifinales": semifinales,
-        "final": final,
+        "campeon": campeon_list[0] if campeon_list else "-",
+        "final": ronda_2 if len(ronda_2) == 2 else ronda_2 + ["-"],
+        "semifinales": ronda_4,
+        "grupos": posiciones_grupos,
+        "dieciseisavos": ronda_32,
+        "octavos": ronda_16,
+        "cuartos": ronda_8,
+        "final_lista": ronda_2 if len(ronda_2) == 2 else ronda_2 + ["-"],
         "partidos": partidos,
+        "campeones_grupo": campeones_grupo,
+        "segundos_grupo": segundos_grupo,
+        "mejores_terceros": [t[0] for t in mejores_terceros],
     }
