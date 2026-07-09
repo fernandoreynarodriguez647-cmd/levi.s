@@ -1,11 +1,22 @@
 from __future__ import annotations
 
 import numpy as np
-from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
-from sklearn.preprocessing import StandardScaler
+
+
+class EnsembleModel:
+    def __init__(self, models: list, metrics: dict):
+        self.models = models
+        self.metrics = metrics
+
+    def predict_proba(self, X):
+        probs = np.mean([m.predict_proba(X) for m in self.models], axis=0)
+        return probs
+
+    def predict(self, X):
+        return (self.predict_proba(X)[:, 1] >= 0.5).astype(int)
 
 
 def _calcular_metricas(modelo, X_test, y_test) -> dict:
@@ -29,9 +40,9 @@ def entrenar_modelo_rf(X, y):
         X, y, test_size=0.2, random_state=42
     )
     modelo = RandomForestClassifier(
-        n_estimators=400,
-        max_depth=None,
-        min_samples_leaf=2,
+        n_estimators=600,
+        max_depth=14,
+        min_samples_leaf=1,
         random_state=42,
         n_jobs=-1,
     )
@@ -40,52 +51,42 @@ def entrenar_modelo_rf(X, y):
     return modelo, X_test, y_test
 
 
-def entrenar_modelo_gb(X, y):
+def entrenar_modelo_ensemble(X, y):
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42
     )
-    modelo = GradientBoostingClassifier(
-        n_estimators=300,
-        max_depth=5,
-        learning_rate=0.05,
-        min_samples_split=10,
-        min_samples_leaf=5,
-        subsample=0.8,
-        random_state=42,
+
+    rf = RandomForestClassifier(
+        n_estimators=600, max_depth=14, min_samples_leaf=1,
+        random_state=42, n_jobs=-1,
     )
-    modelo.fit(X_train, y_train)
-    modelo.metrics = _calcular_metricas(modelo, X_test, y_test)
-    return modelo, X_test, y_test
+    rf.fit(X_train, y_train)
+
+    modelos = [rf]
+
+    try:
+        import xgboost as xgb
+        xg = xgb.XGBClassifier(
+            n_estimators=400, max_depth=6, learning_rate=0.05,
+            subsample=0.8, colsample_bytree=0.8,
+            random_state=42, n_jobs=-1, verbosity=0,
+        )
+        xg.fit(X_train, y_train)
+        modelos.append(xg)
+    except ImportError:
+        pass
+
+    ensemble = EnsembleModel(modelos, _calcular_metricas(modelos[0], X_test, y_test))
+    return ensemble, X_test, y_test
 
 
-def entrenar_modelo_lr(X, y):
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, random_state=42
-    )
-    scaler = StandardScaler()
-    X_train_scaled = scaler.fit_transform(X_train)
-    X_test_scaled = scaler.transform(X_test)
-    modelo = LogisticRegression(max_iter=1000, random_state=42, n_jobs=-1)
-    modelo.fit(X_train_scaled, y_train)
-    modelo.metrics = _calcular_metricas(modelo, X_test_scaled, y_test)
-    modelo.scaler = scaler
-    return modelo, X_test_scaled, y_test
-
-
-def entrenar_modelo(X, y, model_type="gb"):
+def entrenar_modelo(X, y, model_type="ensemble"):
     if model_type == "rf":
         return entrenar_modelo_rf(X, y)
-    elif model_type == "lr":
-        return entrenar_modelo_lr(X, y)
     else:
-        modelo, X_test, y_test = entrenar_modelo_gb(X, y)
-        return modelo, X_test, y_test
+        return entrenar_modelo_ensemble(X, y)
 
 
 def predecir_partido(modelo, features_df):
-    if hasattr(modelo, "scaler"):
-        features_scaled = modelo.scaler.transform(features_df)
-        prob = modelo.predict_proba(features_scaled)[0][1]
-    else:
-        prob = modelo.predict_proba(features_df)[0][1]
+    prob = modelo.predict_proba(features_df)[0][1]
     return prob

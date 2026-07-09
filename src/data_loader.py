@@ -194,6 +194,7 @@ def crear_dataset_base() -> pd.DataFrame:
     partidos = partidos.copy()
     partidos["date"] = pd.to_datetime(partidos["date"], errors="coerce")
     partidos = partidos.dropna(subset=["date"]).sort_values("date")
+    partidos = partidos[partidos["date"] >= "2018-01-01"]
 
     history: dict[str, list[int]] = {}
     rows = []

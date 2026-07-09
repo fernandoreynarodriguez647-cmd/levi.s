@@ -1,11 +1,16 @@
 from pathlib import Path
 import json
+import random
+from collections import Counter
+import numpy as np
 import pandas as pd
 
 from src.data_loader import crear_dataset_base, cargar_elo_ratings, cargar_ranking_fifa, _build_team_rating_map
 from src.features import construir_features, FEATURE_COLUMNS
 from src.models import entrenar_modelo
 from src.simulate_bracket import construir_grupos_mundial, simular_torneo
+
+NUM_SIMULACIONES = 20
 
 
 def _generar_readme(resultado: dict, output_path: Path) -> None:
@@ -173,11 +178,28 @@ def main() -> None:
     fifa_df = cargar_ranking_fifa()
     team_ratings = _build_team_rating_map(elo_df, fifa_df)
 
-    grupos = construir_grupos_mundial()
+    campeones: list[str] = []
+    resultados: list[dict] = []
 
-    resultado = simular_torneo(grupos, modelo, team_ratings)
+    for sim in range(NUM_SIMULACIONES):
+        seed = sim * 100
+        random.seed(seed)
+        np.random.seed(seed % (2**31))
+
+        grupos = construir_grupos_mundial(team_ratings)
+        r = simular_torneo(grupos, modelo, team_ratings)
+        campeones.append(r["campeon"])
+        resultados.append(r)
+
+    champ_counts = Counter(campeones)
+    campeon_final = champ_counts.most_common(1)[0][0]
+
+    resultado = next(r for r in resultados if r["campeon"] == campeon_final)
+
     resultado["modelo_accuracy"] = accuracy
     resultado["modelo_metrics"] = modelo.metrics
+    resultado["simulaciones"] = NUM_SIMULACIONES
+    resultado["frecuencia_campeones"] = dict(champ_counts.most_common(10))
 
     result_path = output_dir / "prediccion_mundial_2026.json"
     with result_path.open("w", encoding="utf-8") as fh:
@@ -189,10 +211,12 @@ def main() -> None:
     print("=" * 55)
     print("          PREDICCIÓN MUNDIAL 2026")
     print("=" * 55)
+    print(f"  Simulaciones:               {NUM_SIMULACIONES}")
     print(f"  Precisión del modelo:       {accuracy:.3f}")
     print(f"  Campeón previsto:           {resultado['campeon']}")
     print(f"  Final prevista:             {resultado['final'][0]} vs {resultado['final'][1]}")
     print(f"  Semifinalistas:             {', '.join(resultado['semifinales'])}")
+    print(f"  Top campeones:              {', '.join(f'{c}({n})' for c, n in champ_counts.most_common(5))}")
     print(f"  Archivo JSON:               outputs/prediccion_mundial_2026.json")
     print(f"  Archivo README:             outputs/PREDICCION_MUNDIAL_2026.md")
     print("=" * 55)

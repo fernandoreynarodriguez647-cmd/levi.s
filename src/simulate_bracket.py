@@ -126,7 +126,7 @@ def simular_partido_grupo(
     return winner, goals_a, goals_b
 
 
-def construir_grupos_mundial() -> dict[str, list[str]]:
+def construir_grupos_mundial(team_ratings: dict[str, float] | None = None) -> dict[str, list[str]]:
     equipos = {
         "CONMEBOL": [
             "Argentina", "Brasil", "Colombia", "Ecuador", "Paraguay", "Uruguay"
@@ -154,10 +154,16 @@ def construir_grupos_mundial() -> dict[str, list[str]]:
     if len(todos) != 48:
         raise ValueError(f"Se esperaban 48 equipos, se encontraron {len(todos)}")
 
+    if team_ratings:
+        todos.sort(key=lambda t: _get_elo(t, team_ratings), reverse=True)
+    else:
+        random.shuffle(todos)
+
     grupos: dict[str, list[str]] = {}
     letras = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"]
     for idx, letra in enumerate(letras):
-        grupos[letra] = todos[idx * 4 : (idx + 1) * 4]
+        indices = [idx, idx + 12, idx + 24, idx + 36]
+        grupos[letra] = [todos[i] for i in indices]
     return grupos
 
 
