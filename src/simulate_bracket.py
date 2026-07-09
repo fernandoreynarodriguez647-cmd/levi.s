@@ -13,27 +13,9 @@ from src.models import predecir_partido
 random.seed(42)
 np.random.seed(42)
 
-TEAM_ELO = {
-    "Argentina": 2144, "España": 2134, "Francia": 2090, "Inglaterra": 2028,
-    "Colombia": 1998, "Portugal": 1988, "Brasil": 1986, "Países Bajos": 1972,
-    "Alemania": 1954, "Noruega": 1951, "Japón": 1925, "Croacia": 1896,
-    "México": 1896, "Suiza": 1885, "Bélgica": 1869, "Marruecos": 1866,
-    "Ecuador": 1864, "Uruguay": 1851, "Austria": 1841, "Estados Unidos": 1820,
-    "Senegal": 1817, "Paraguay": 1816, "Turquía": 1813, "Australia": 1799,
-    "Argelia": 1780, "Canadá": 1777, "República de Corea": 1771,
-    "Escocia": 1768, "Irán": 1766, "Egipto": 1740, "Costa de Marfil": 1728,
-    "Suecia": 1727, "Chequia": 1696, "Uzbekistán": 1677, "RD Congo": 1674,
-    "Panamá": 1668, "Jordania": 1632, "Cabo Verde": 1625,
-    "Bosnia y Herzegovina": 1596, "Arabia Saudí": 1593, "Iraq": 1586,
-    "Ghana": 1584, "Túnez": 1570, "Nueva Zelanda": 1549, "Sudáfrica": 1527,
-    "Haití": 1528, "Curazao": 1453, "Qatar": 1437,
-}
-
 
 def _get_elo(team: str, team_ratings: dict[str, float]) -> float:
-    if team in team_ratings:
-        return team_ratings[team]
-    return TEAM_ELO.get(team, 1500.0)
+    return team_ratings.get(team, 1500.0)
 
 
 def simular_partido(
@@ -213,8 +195,22 @@ def _simular_grupo(
 
     tabla = sorted(equipos, key=sort_key, reverse=True)
 
+    pg_dict = {e: 0 for e in equipos}
+    pe_dict = {e: 0 for e in equipos}
+    pp_dict = {e: 0 for e in equipos}
+    for p in partidos_grupo:
+        if p["ganador"] == p["local"]:
+            pg_dict[p["local"]] += 1
+            pp_dict[p["visitante"]] += 1
+        elif p["ganador"] == p["visitante"]:
+            pg_dict[p["visitante"]] += 1
+            pp_dict[p["local"]] += 1
+        else:
+            pe_dict[p["local"]] += 1
+            pe_dict[p["visitante"]] += 1
+
     posiciones = [
-        (e, puntos[e], 3, puntos[e] // 3, 0, 3 - puntos[e] // 3, gf[e], gc[e], gf[e] - gc[e])
+        (e, puntos[e], 3, pg_dict[e], pe_dict[e], pp_dict[e], gf[e], gc[e], gf[e] - gc[e])
         for e in tabla
     ]
 

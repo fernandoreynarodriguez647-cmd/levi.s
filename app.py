@@ -188,7 +188,7 @@ for ti, letra in enumerate(sorted(grupos_data.keys())):
                 "GF": gf, "GC": gc, "DG": dg, "Pts": pts,
                 "": "🥇" if is_1st else "🥈" if is_2nd else "",
             })
-        st.dataframe(pd.DataFrame(records), use_container_width=True, hide_index=True,
+        st.dataframe(pd.DataFrame(records), width='stretch', hide_index=True,
             column_config={"": st.column_config.TextColumn("", width="small")})
 
         group_matches = [p for p in partidos if f"Grupo {letra}" in p.get("ronda", "")]
@@ -234,7 +234,7 @@ for team in sorted(all_teams_set):
     if weight > 0:
         chart_data.append({"Equipo": team, "Avance": weight})
 if chart_data:
-    st.bar_chart(pd.DataFrame(chart_data).set_index("Equipo"), use_container_width=True)
+    st.bar_chart(pd.DataFrame(chart_data).set_index("Equipo"), width='stretch')
 
 # ========== SIDEBAR ==========
 st.sidebar.header("⚙️ Panel de control")

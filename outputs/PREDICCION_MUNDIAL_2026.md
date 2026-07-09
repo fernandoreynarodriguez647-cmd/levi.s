@@ -5,20 +5,20 @@
 | Métrica | Valor |
 |---------|-------|
 | Accuracy | **66.3%** |
-| Precision | 66.4% |
-| Recall | 64.6% |
-| F1 | 0.655 |
-| ROC-AUC | 0.731 |
+| Precision | 66.1% |
+| Recall | 64.5% |
+| F1 | 0.653 |
+| ROC-AUC | 0.730 |
 
 ---
 
 ## 🏆 Resultado Final
 
-### 🥇 Campeón: **Argentina**
+### 🥇 Campeón: **Alemania**
 
-### 🥈 Final: **Argentina** vs **Arabia Saudí**
+### 🥈 Final: **Estados Unidos** vs **Alemania**
 
-### 🥉 Semifinalistas: Argentina, Inglaterra, Arabia Saudí, Brasil
+### 🥉 Semifinalistas: Estados Unidos, Colombia, Irán, Alemania
 
 ---
 
@@ -28,109 +28,109 @@
 
 | Pos | Equipo | PJ | PG | PE | PP | GF | GC | DG | Pts |
 |-----|--------|----|----|----|----|----|----|----|-----|
-| 1 | **Argentina** 🥇 | 3 | 2 | 0 | 1 | 6 | 2 | 4 | **7** |
-| 2 | **Colombia** 🥈 | 3 | 1 | 0 | 2 | 1 | 0 | 1 | **5** |
-| 3 | **Brasil** | 3 | 1 | 0 | 2 | 1 | 3 | -2 | **4** |
-| 4 | **Ecuador** | 3 | 0 | 0 | 3 | 2 | 5 | -3 | **0** |
+| 1 | **Argentina** 🥇 | 3 | 2 | 1 | 0 | 6 | 2 | 4 | **7** |
+| 2 | **Colombia** 🥈 | 3 | 1 | 2 | 0 | 1 | 0 | 1 | **5** |
+| 3 | **Brasil** | 3 | 0 | 2 | 1 | 1 | 4 | -3 | **2** |
+| 4 | **Ecuador** | 3 | 0 | 1 | 2 | 3 | 5 | -2 | **1** |
 
 ### Grupo B
 
 | Pos | Equipo | PJ | PG | PE | PP | GF | GC | DG | Pts |
 |-----|--------|----|----|----|----|----|----|----|-----|
-| 1 | **Uruguay** 🥇 | 3 | 3 | 0 | 0 | 6 | 0 | 6 | **9** |
-| 2 | **Paraguay** 🥈 | 3 | 1 | 0 | 2 | 2 | 3 | -1 | **3** |
-| 3 | **Austria** | 3 | 1 | 0 | 2 | 1 | 3 | -2 | **3** |
-| 4 | **Alemania** | 3 | 1 | 0 | 2 | 2 | 5 | -3 | **3** |
+| 1 | **Uruguay** 🥇 | 3 | 2 | 1 | 0 | 6 | 2 | 4 | **7** |
+| 2 | **Paraguay** 🥈 | 3 | 2 | 1 | 0 | 3 | 1 | 2 | **7** |
+| 3 | **Alemania** | 3 | 1 | 0 | 2 | 2 | 4 | -2 | **3** |
+| 4 | **Austria** | 3 | 0 | 0 | 3 | 1 | 5 | -4 | **0** |
 
 ### Grupo C
 
 | Pos | Equipo | PJ | PG | PE | PP | GF | GC | DG | Pts |
 |-----|--------|----|----|----|----|----|----|----|-----|
-| 1 | **España** 🥇 | 3 | 2 | 0 | 1 | 6 | 3 | 3 | **7** |
-| 2 | **Croacia** 🥈 | 3 | 1 | 0 | 2 | 3 | 3 | 0 | **4** |
-| 3 | **Escocia** | 3 | 1 | 0 | 2 | 5 | 4 | 1 | **3** |
-| 4 | **Bélgica** | 3 | 0 | 0 | 3 | 2 | 6 | -4 | **2** |
+| 1 | **España** 🥇 | 3 | 2 | 1 | 0 | 4 | 1 | 3 | **7** |
+| 2 | **Bélgica** 🥈 | 3 | 2 | 0 | 1 | 7 | 1 | 6 | **6** |
+| 3 | **Croacia** | 3 | 1 | 1 | 1 | 2 | 1 | 1 | **4** |
+| 4 | **Escocia** | 3 | 0 | 0 | 3 | 1 | 11 | -10 | **0** |
 
 ### Grupo D
 
 | Pos | Equipo | PJ | PG | PE | PP | GF | GC | DG | Pts |
 |-----|--------|----|----|----|----|----|----|----|-----|
-| 1 | **Francia** 🥇 | 3 | 2 | 0 | 1 | 9 | 3 | 6 | **7** |
-| 2 | **Inglaterra** 🥈 | 3 | 2 | 0 | 1 | 6 | 4 | 2 | **6** |
-| 3 | **Países Bajos** | 3 | 1 | 0 | 2 | 4 | 3 | 1 | **4** |
-| 4 | **Noruega** | 3 | 0 | 0 | 3 | 0 | 9 | -9 | **0** |
+| 1 | **Noruega** 🥇 | 3 | 3 | 0 | 0 | 6 | 2 | 4 | **9** |
+| 2 | **Francia** 🥈 | 3 | 1 | 1 | 1 | 4 | 2 | 2 | **4** |
+| 3 | **Países Bajos** | 3 | 1 | 1 | 1 | 3 | 2 | 1 | **4** |
+| 4 | **Inglaterra** | 3 | 0 | 0 | 3 | 1 | 8 | -7 | **0** |
 
 ### Grupo E
 
 | Pos | Equipo | PJ | PG | PE | PP | GF | GC | DG | Pts |
 |-----|--------|----|----|----|----|----|----|----|-----|
-| 1 | **Suiza** 🥇 | 3 | 2 | 0 | 1 | 7 | 3 | 4 | **7** |
-| 2 | **Portugal** 🥈 | 3 | 1 | 0 | 2 | 3 | 2 | 1 | **5** |
-| 3 | **Turquía** | 3 | 0 | 0 | 3 | 2 | 4 | -2 | **2** |
-| 4 | **Suecia** | 3 | 0 | 0 | 3 | 3 | 6 | -3 | **1** |
+| 1 | **Suiza** 🥇 | 3 | 2 | 1 | 0 | 6 | 1 | 5 | **7** |
+| 2 | **Suecia** 🥈 | 3 | 1 | 2 | 0 | 4 | 0 | 4 | **5** |
+| 3 | **Portugal** | 3 | 1 | 1 | 1 | 3 | 2 | 1 | **4** |
+| 4 | **Turquía** | 3 | 0 | 0 | 3 | 0 | 10 | -10 | **0** |
 
 ### Grupo F
 
 | Pos | Equipo | PJ | PG | PE | PP | GF | GC | DG | Pts |
 |-----|--------|----|----|----|----|----|----|----|-----|
-| 1 | **Estados Unidos** 🥇 | 3 | 2 | 0 | 1 | 4 | 2 | 2 | **6** |
-| 2 | **Canadá** 🥈 | 3 | 2 | 0 | 1 | 3 | 1 | 2 | **6** |
-| 3 | **Bosnia y Herzegovina** | 3 | 1 | 0 | 2 | 1 | 1 | 0 | **4** |
-| 4 | **Chequia** | 3 | 0 | 0 | 3 | 1 | 5 | -4 | **1** |
+| 1 | **Estados Unidos** 🥇 | 3 | 3 | 0 | 0 | 5 | 0 | 5 | **9** |
+| 2 | **Canadá** 🥈 | 3 | 1 | 0 | 2 | 4 | 3 | 1 | **3** |
+| 3 | **Chequia** | 3 | 1 | 0 | 2 | 2 | 4 | -2 | **3** |
+| 4 | **Bosnia y Herzegovina** | 3 | 1 | 0 | 2 | 2 | 6 | -4 | **3** |
 
 ### Grupo G
 
 | Pos | Equipo | PJ | PG | PE | PP | GF | GC | DG | Pts |
 |-----|--------|----|----|----|----|----|----|----|-----|
-| 1 | **México** 🥇 | 3 | 2 | 0 | 1 | 5 | 2 | 3 | **7** |
-| 2 | **Panamá** 🥈 | 3 | 1 | 0 | 2 | 4 | 3 | 1 | **4** |
-| 3 | **Curazao** | 3 | 1 | 0 | 2 | 2 | 3 | -1 | **4** |
-| 4 | **Haití** | 3 | 0 | 0 | 3 | 1 | 4 | -3 | **1** |
+| 1 | **México** 🥇 | 3 | 3 | 0 | 0 | 6 | 0 | 6 | **9** |
+| 2 | **Curazao** 🥈 | 3 | 1 | 1 | 1 | 3 | 3 | 0 | **4** |
+| 3 | **Haití** | 3 | 1 | 0 | 2 | 1 | 4 | -3 | **3** |
+| 4 | **Panamá** | 3 | 0 | 1 | 2 | 1 | 4 | -3 | **1** |
 
 ### Grupo H
 
 | Pos | Equipo | PJ | PG | PE | PP | GF | GC | DG | Pts |
 |-----|--------|----|----|----|----|----|----|----|-----|
-| 1 | **Egipto** 🥇 | 3 | 2 | 0 | 1 | 7 | 3 | 4 | **6** |
-| 2 | **Argelia** 🥈 | 3 | 2 | 0 | 1 | 6 | 2 | 4 | **6** |
-| 3 | **Costa de Marfil** | 3 | 2 | 0 | 1 | 5 | 2 | 3 | **6** |
-| 4 | **Cabo Verde** | 3 | 0 | 0 | 3 | 0 | 11 | -11 | **0** |
+| 1 | **Egipto** 🥇 | 3 | 3 | 0 | 0 | 9 | 2 | 7 | **9** |
+| 2 | **Argelia** 🥈 | 3 | 1 | 1 | 1 | 4 | 3 | 1 | **4** |
+| 3 | **Cabo Verde** | 3 | 1 | 1 | 1 | 3 | 5 | -2 | **4** |
+| 4 | **Costa de Marfil** | 3 | 0 | 0 | 3 | 2 | 8 | -6 | **0** |
 
 ### Grupo I
 
 | Pos | Equipo | PJ | PG | PE | PP | GF | GC | DG | Pts |
 |-----|--------|----|----|----|----|----|----|----|-----|
-| 1 | **Senegal** 🥇 | 3 | 2 | 0 | 1 | 6 | 4 | 2 | **7** |
-| 2 | **Marruecos** 🥈 | 3 | 2 | 0 | 1 | 5 | 2 | 3 | **6** |
-| 3 | **RD Congo** | 3 | 1 | 0 | 2 | 5 | 5 | 0 | **4** |
-| 4 | **Ghana** | 3 | 0 | 0 | 3 | 1 | 6 | -5 | **0** |
+| 1 | **Marruecos** 🥇 | 3 | 3 | 0 | 0 | 7 | 0 | 7 | **9** |
+| 2 | **Senegal** 🥈 | 3 | 2 | 0 | 1 | 4 | 4 | 0 | **6** |
+| 3 | **RD Congo** | 3 | 1 | 0 | 2 | 1 | 2 | -1 | **3** |
+| 4 | **Ghana** | 3 | 0 | 0 | 3 | 0 | 6 | -6 | **0** |
 
 ### Grupo J
 
 | Pos | Equipo | PJ | PG | PE | PP | GF | GC | DG | Pts |
 |-----|--------|----|----|----|----|----|----|----|-----|
-| 1 | **Australia** 🥇 | 3 | 3 | 0 | 0 | 12 | 3 | 9 | **9** |
-| 2 | **Arabia Saudí** 🥈 | 3 | 1 | 0 | 2 | 6 | 7 | -1 | **3** |
-| 3 | **Túnez** | 3 | 1 | 0 | 2 | 1 | 4 | -3 | **3** |
-| 4 | **Sudáfrica** | 3 | 1 | 0 | 2 | 3 | 8 | -5 | **3** |
+| 1 | **Sudáfrica** 🥇 | 3 | 2 | 1 | 0 | 4 | 2 | 2 | **7** |
+| 2 | **Arabia Saudí** 🥈 | 3 | 1 | 1 | 1 | 5 | 3 | 2 | **4** |
+| 3 | **Australia** | 3 | 1 | 1 | 1 | 5 | 3 | 2 | **4** |
+| 4 | **Túnez** | 3 | 0 | 1 | 2 | 4 | 10 | -6 | **1** |
 
 ### Grupo K
 
 | Pos | Equipo | PJ | PG | PE | PP | GF | GC | DG | Pts |
 |-----|--------|----|----|----|----|----|----|----|-----|
-| 1 | **Japón** 🥇 | 3 | 3 | 0 | 0 | 8 | 1 | 7 | **9** |
-| 2 | **Irán** 🥈 | 3 | 1 | 0 | 2 | 5 | 6 | -1 | **4** |
-| 3 | **Jordania** | 3 | 0 | 0 | 3 | 1 | 3 | -2 | **2** |
-| 4 | **Iraq** | 3 | 0 | 0 | 3 | 1 | 5 | -4 | **1** |
+| 1 | **Japón** 🥇 | 3 | 3 | 0 | 0 | 10 | 1 | 9 | **9** |
+| 2 | **Irán** 🥈 | 3 | 1 | 1 | 1 | 6 | 7 | -1 | **4** |
+| 3 | **Jordania** | 3 | 0 | 2 | 1 | 3 | 5 | -2 | **2** |
+| 4 | **Iraq** | 3 | 0 | 1 | 2 | 3 | 9 | -6 | **1** |
 
 ### Grupo L
 
 | Pos | Equipo | PJ | PG | PE | PP | GF | GC | DG | Pts |
 |-----|--------|----|----|----|----|----|----|----|-----|
-| 1 | **República de Corea** 🥇 | 3 | 1 | 0 | 2 | 5 | 1 | 4 | **5** |
-| 2 | **Uzbekistán** 🥈 | 3 | 1 | 0 | 2 | 4 | 2 | 2 | **4** |
-| 3 | **Nueva Zelanda** | 3 | 1 | 0 | 2 | 4 | 7 | -3 | **4** |
-| 4 | **Qatar** | 3 | 0 | 0 | 3 | 3 | 6 | -3 | **2** |
+| 1 | **República de Corea** 🥇 | 3 | 1 | 2 | 0 | 3 | 1 | 2 | **5** |
+| 2 | **Qatar** 🥈 | 3 | 1 | 2 | 0 | 2 | 1 | 1 | **5** |
+| 3 | **Uzbekistán** | 3 | 1 | 1 | 1 | 2 | 2 | 0 | **4** |
+| 4 | **Nueva Zelanda** | 3 | 0 | 1 | 2 | 3 | 6 | -3 | **1** |
 
 ---
 
@@ -138,24 +138,24 @@
 
 | # | Enfrentamiento | Resultado | Ganador |
 |---|----------------|-----------|---------|
-| Argentina | **4 - 0** | Uruguay | ✅ Argentina |
-| España | **2 - 0** | Francia | ✅ España |
-| Suiza | **0 - 1** | Estados Unidos | ✅ Estados Unidos |
-| México | **3 - 1** | Egipto | ✅ México |
-| Senegal | **0 - 1** | Australia | ✅ Australia |
-| Japón | **2 - 0** | República de Corea | ✅ Japón |
-| Colombia | **3 - 0** | Paraguay | ✅ Colombia |
-| Croacia | **0 - 1** | Inglaterra | ✅ Inglaterra |
-| Portugal | **3 - 1** | Canadá | ✅ Portugal |
-| Panamá | **3 - 2** | Argelia | ✅ Panamá |
-| Marruecos | **0 - 1** | Arabia Saudí | ✅ Arabia Saudí |
-| Irán | **0 - 1** | Uzbekistán | ✅ Uzbekistán |
-| Costa de Marfil | **1 - 0** | Países Bajos | ✅ Costa de Marfil |
-| RD Congo | **2 - 1** | Bosnia y Herzegovina | ✅ RD Congo |
-| Curazao | **0 - 5** | Brasil | ✅ Brasil |
-| Nueva Zelanda | **0 - 4** | Escocia | ✅ Escocia |
+| Argentina | **0 - 2** | Uruguay | ✅ Uruguay |
+| España | **1 - 0** | Noruega | ✅ España |
+| Suiza | **1 - 2** | Estados Unidos | ✅ Estados Unidos |
+| México | **4 - 0** | Egipto | ✅ México |
+| Marruecos | **2 - 0** | Sudáfrica | ✅ Marruecos |
+| Japón | **1 - 0** | República de Corea | ✅ Japón |
+| Colombia | **3 - 1** | Paraguay | ✅ Colombia |
+| Bélgica | **0 - 2** | Francia | ✅ Francia |
+| Suecia | **1 - 2** | Canadá | ✅ Canadá |
+| Curazao | **2 - 1** | Argelia | ✅ Curazao |
+| Senegal | **1 - 2** | Arabia Saudí | ✅ Arabia Saudí |
+| Irán | **2 - 0** | Qatar | ✅ Irán |
+| Australia | **1 - 3** | Países Bajos | ✅ Países Bajos |
+| Portugal | **1 - 0** | Croacia | ✅ Portugal |
+| Uzbekistán | **0 - 1** | Cabo Verde | ✅ Cabo Verde |
+| RD Congo | **0 - 1** | Alemania | ✅ Alemania |
 
-**Clasificados a Octavos:** Argentina, España, Estados Unidos, México, Australia, Japón, Colombia, Inglaterra, Portugal, Panamá, Arabia Saudí, Uzbekistán, Costa de Marfil, RD Congo, Brasil, Escocia
+**Clasificados a Octavos:** Uruguay, España, Estados Unidos, México, Marruecos, Japón, Colombia, Francia, Canadá, Curazao, Arabia Saudí, Irán, Países Bajos, Portugal, Cabo Verde, Alemania
 
 ---
 
@@ -163,16 +163,16 @@
 
 | # | Enfrentamiento | Resultado | Ganador |
 |---|----------------|-----------|---------|
-| Argentina | **3 - 1** | España | ✅ Argentina |
-| Estados Unidos | **1 - 3** | México | ✅ México |
-| Australia | **1 - 0** | Japón | ✅ Australia |
-| Colombia | **1 - 3** | Inglaterra | ✅ Inglaterra |
-| Portugal | **2 - 0** | Panamá | ✅ Portugal |
-| Arabia Saudí | **3 - 0** | Uzbekistán | ✅ Arabia Saudí |
-| Costa de Marfil | **2 - 1** | RD Congo | ✅ Costa de Marfil |
-| Brasil | **2 - 0** | Escocia | ✅ Brasil |
+| Uruguay | **1 - 0** | España | ✅ Uruguay |
+| Estados Unidos | **3 - 2** | México | ✅ Estados Unidos |
+| Marruecos | **3 - 2** | Japón | ✅ Marruecos |
+| Colombia | **3 - 2** | Francia | ✅ Colombia |
+| Canadá | **4 - 0** | Curazao | ✅ Canadá |
+| Arabia Saudí | **0 - 1** | Irán | ✅ Irán |
+| Países Bajos | **1 - 3** | Portugal | ✅ Portugal |
+| Cabo Verde | **0 - 4** | Alemania | ✅ Alemania |
 
-**Clasificados a Cuartos:** Argentina, México, Australia, Inglaterra, Portugal, Arabia Saudí, Costa de Marfil, Brasil
+**Clasificados a Cuartos:** Uruguay, Estados Unidos, Marruecos, Colombia, Canadá, Irán, Portugal, Alemania
 
 ---
 
@@ -180,12 +180,12 @@
 
 | # | Enfrentamiento | Resultado | Ganador |
 |---|----------------|-----------|---------|
-| Argentina | **2 - 0** | México | ✅ Argentina |
-| Australia | **1 - 2** | Inglaterra | ✅ Inglaterra |
-| Portugal | **0 - 1** | Arabia Saudí | ✅ Arabia Saudí |
-| Costa de Marfil | **0 - 5** | Brasil | ✅ Brasil |
+| Uruguay | **0 - 1** | Estados Unidos | ✅ Estados Unidos |
+| Marruecos | **1 - 2** | Colombia | ✅ Colombia |
+| Canadá | **0 - 2** | Irán | ✅ Irán |
+| Portugal | **0 - 1** | Alemania | ✅ Alemania |
 
-**Clasificados a Semifinales:** Argentina, Inglaterra, Arabia Saudí, Brasil
+**Clasificados a Semifinales:** Estados Unidos, Colombia, Irán, Alemania
 
 ---
 
@@ -193,18 +193,18 @@
 
 | # | Enfrentamiento | Resultado | Ganador |
 |---|----------------|-----------|---------|
-| Argentina | **2 - 1** | Inglaterra | ✅ Argentina |
-| Arabia Saudí | **1 - 0** | Brasil | ✅ Arabia Saudí |
+| Estados Unidos | **2 - 0** | Colombia | ✅ Estados Unidos |
+| Irán | **1 - 5** | Alemania | ✅ Alemania |
 
-**Finalistas:** Argentina vs Arabia Saudí
+**Finalistas:** Estados Unidos vs Alemania
 
 ---
 
 ## 🏟️ FINAL
 
-### Argentina **1** - **0** Arabia Saudí
+### Estados Unidos **0** - **3** Alemania
 
-### 🏆 Campeón del Mundo 2026: **Argentina** 🏆
+### 🏆 Campeón del Mundo 2026: **Alemania** 🏆
 
 ---
 
@@ -212,9 +212,9 @@
 
 ```
 Ronda de 32:    32 equipos
-Octavos:        16 equipos → Argentina, España, Estados Unidos, México, Australia, Japón, Colombia, Inglaterra, Portugal, Panamá, Arabia Saudí, Uzbekistán, Costa de Marfil, RD Congo, Brasil, Escocia
-Cuartos:        8 equipos → Argentina, México, Australia, Inglaterra, Portugal, Arabia Saudí, Costa de Marfil, Brasil
-Semifinales:    4 equipos → Argentina, Inglaterra, Arabia Saudí, Brasil
-Final:          Argentina vs Arabia Saudí
-Campeón:        Argentina
+Octavos:        16 equipos → Uruguay, España, Estados Unidos, México, Marruecos, Japón, Colombia, Francia, Canadá, Curazao, Arabia Saudí, Irán, Países Bajos, Portugal, Cabo Verde, Alemania
+Cuartos:        8 equipos → Uruguay, Estados Unidos, Marruecos, Colombia, Canadá, Irán, Portugal, Alemania
+Semifinales:    4 equipos → Estados Unidos, Colombia, Irán, Alemania
+Final:          Estados Unidos vs Alemania
+Campeón:        Alemania
 ```
