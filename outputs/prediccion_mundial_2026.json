@@ -2,26 +2,26 @@
   "campeon": "España",
   "final": [
     "España",
-    "Países Bajos"
+    "Bélgica"
   ],
   "semifinales": [
     "España",
-    "Japón",
-    "Países Bajos",
-    "Brasil"
+    "Noruega",
+    "Ecuador",
+    "Bélgica"
   ],
   "grupos": {
     "A": [
       [
         "Argentina",
-        7,
+        9,
         3,
-        2,
-        1,
+        3,
         0,
-        3,
+        0,
+        6,
         1,
-        2
+        5
       ],
       [
         "México",
@@ -31,19 +31,19 @@
         1,
         1,
         4,
-        2,
-        2
+        4,
+        0
       ],
       [
         "Argelia",
-        4,
+        2,
         3,
+        0,
+        2,
         1,
-        1,
-        1,
+        2,
         4,
-        5,
-        -1
+        -2
       ],
       [
         "Jordania",
@@ -52,266 +52,25 @@
         0,
         1,
         2,
-        0,
-        3,
+        2,
+        5,
         -3
       ]
     ],
     "B": [
       [
         "España",
-        6,
-        3,
-        2,
-        0,
-        1,
-        4,
-        1,
-        3
-      ],
-      [
-        "Cabo Verde",
-        6,
-        3,
-        2,
-        0,
-        1,
-        2,
-        2,
-        0
-      ],
-      [
-        "Canadá",
-        3,
-        3,
-        1,
-        0,
-        2,
-        3,
-        4,
-        -1
-      ],
-      [
-        "Suiza",
-        3,
-        3,
-        1,
-        0,
-        2,
-        2,
-        4,
-        -2
-      ]
-    ],
-    "C": [
-      [
-        "Francia",
         9,
         3,
         3,
         0,
         0,
-        14,
-        3,
-        11
-      ],
-      [
-        "Bélgica",
-        6,
-        3,
-        2,
-        0,
-        1,
-        6,
-        6,
-        0
-      ],
-      [
-        "República de Corea",
-        3,
-        3,
-        1,
-        0,
-        2,
-        5,
-        10,
-        -5
-      ],
-      [
-        "Bosnia y Herzegovina",
-        0,
-        3,
-        0,
-        0,
-        3,
-        3,
-        9,
-        -6
-      ]
-    ],
-    "D": [
-      [
-        "Inglaterra",
-        9,
-        3,
-        3,
-        0,
-        0,
-        8,
-        0,
-        8
-      ],
-      [
-        "Escocia",
-        4,
-        3,
-        1,
-        1,
-        1,
-        6,
-        4,
-        2
-      ],
-      [
-        "Marruecos",
-        4,
-        3,
-        1,
-        1,
-        1,
-        3,
-        3,
-        0
-      ],
-      [
-        "Arabia Saudí",
-        0,
-        3,
-        0,
-        0,
-        3,
-        0,
-        10,
-        -10
-      ]
-    ],
-    "E": [
-      [
-        "Colombia",
-        9,
-        3,
-        3,
-        0,
-        0,
-        5,
-        0,
-        5
-      ],
-      [
-        "Ecuador",
-        6,
-        3,
-        2,
-        0,
-        1,
         6,
         2,
         4
       ],
       [
-        "Irán",
-        3,
-        3,
-        1,
-        0,
-        2,
-        2,
-        4,
-        -2
-      ],
-      [
-        "Iraq",
-        0,
-        3,
-        0,
-        0,
-        3,
-        0,
-        7,
-        -7
-      ]
-    ],
-    "F": [
-      [
-        "Portugal",
-        6,
-        3,
-        2,
-        0,
-        1,
-        8,
-        3,
-        5
-      ],
-      [
-        "Uruguay",
-        5,
-        3,
-        1,
-        2,
-        0,
-        3,
-        0,
-        3
-      ],
-      [
-        "Egipto",
-        2,
-        3,
-        0,
-        2,
-        1,
-        2,
-        6,
-        -4
-      ],
-      [
-        "Ghana",
-        2,
-        3,
-        0,
-        2,
-        1,
-        2,
-        6,
-        -4
-      ]
-    ],
-    "G": [
-      [
-        "Austria",
-        7,
-        3,
-        2,
-        1,
-        0,
-        6,
-        1,
-        5
-      ],
-      [
-        "Costa de Marfil",
-        5,
-        3,
-        1,
-        2,
-        0,
-        3,
-        1,
-        2
-      ],
-      [
-        "Brasil",
+        "Suiza",
         4,
         3,
         1,
@@ -322,6 +81,247 @@
         1
       ],
       [
+        "Canadá",
+        4,
+        3,
+        1,
+        1,
+        1,
+        4,
+        3,
+        1
+      ],
+      [
+        "Cabo Verde",
+        0,
+        3,
+        0,
+        0,
+        3,
+        0,
+        6,
+        -6
+      ]
+    ],
+    "C": [
+      [
+        "Francia",
+        9,
+        3,
+        3,
+        0,
+        0,
+        6,
+        2,
+        4
+      ],
+      [
+        "República de Corea",
+        4,
+        3,
+        1,
+        1,
+        1,
+        4,
+        3,
+        1
+      ],
+      [
+        "Bélgica",
+        4,
+        3,
+        1,
+        1,
+        1,
+        4,
+        4,
+        0
+      ],
+      [
+        "Bosnia y Herzegovina",
+        0,
+        3,
+        0,
+        0,
+        3,
+        1,
+        6,
+        -5
+      ]
+    ],
+    "D": [
+      [
+        "Inglaterra",
+        9,
+        3,
+        3,
+        0,
+        0,
+        6,
+        3,
+        3
+      ],
+      [
+        "Marruecos",
+        4,
+        3,
+        1,
+        1,
+        1,
+        4,
+        3,
+        1
+      ],
+      [
+        "Escocia",
+        4,
+        3,
+        1,
+        1,
+        1,
+        4,
+        4,
+        0
+      ],
+      [
+        "Arabia Saudí",
+        0,
+        3,
+        0,
+        0,
+        3,
+        2,
+        6,
+        -4
+      ]
+    ],
+    "E": [
+      [
+        "Colombia",
+        9,
+        3,
+        3,
+        0,
+        0,
+        6,
+        1,
+        5
+      ],
+      [
+        "Ecuador",
+        4,
+        3,
+        1,
+        1,
+        1,
+        4,
+        3,
+        1
+      ],
+      [
+        "Irán",
+        4,
+        3,
+        1,
+        1,
+        1,
+        3,
+        4,
+        -1
+      ],
+      [
+        "Iraq",
+        0,
+        3,
+        0,
+        0,
+        3,
+        1,
+        6,
+        -5
+      ]
+    ],
+    "F": [
+      [
+        "Portugal",
+        9,
+        3,
+        3,
+        0,
+        0,
+        7,
+        1,
+        6
+      ],
+      [
+        "Uruguay",
+        4,
+        3,
+        1,
+        1,
+        1,
+        3,
+        4,
+        -1
+      ],
+      [
+        "Egipto",
+        2,
+        3,
+        0,
+        2,
+        1,
+        2,
+        4,
+        -2
+      ],
+      [
+        "Ghana",
+        1,
+        3,
+        0,
+        1,
+        2,
+        3,
+        6,
+        -3
+      ]
+    ],
+    "G": [
+      [
+        "Brasil",
+        9,
+        3,
+        3,
+        0,
+        0,
+        6,
+        1,
+        5
+      ],
+      [
+        "Austria",
+        6,
+        3,
+        2,
+        0,
+        1,
+        5,
+        3,
+        2
+      ],
+      [
+        "Costa de Marfil",
+        3,
+        3,
+        1,
+        0,
+        2,
+        3,
+        4,
+        -1
+      ],
+      [
         "Túnez",
         0,
         3,
@@ -329,43 +329,43 @@
         0,
         3,
         0,
-        8,
-        -8
+        6,
+        -6
       ]
     ],
     "H": [
       [
-        "Suecia",
-        6,
-        3,
-        2,
-        0,
-        1,
-        5,
-        2,
-        3
-      ],
-      [
         "Países Bajos",
-        6,
+        9,
         3,
-        2,
+        3,
         0,
-        1,
-        3,
-        1,
-        2
+        0,
+        5,
+        0,
+        5
       ],
       [
         "Estados Unidos",
-        6,
-        3,
-        2,
-        0,
-        1,
+        4,
         3,
         1,
-        2
+        1,
+        1,
+        3,
+        3,
+        0
+      ],
+      [
+        "Suecia",
+        4,
+        3,
+        1,
+        1,
+        1,
+        3,
+        4,
+        -1
       ],
       [
         "Nueva Zelanda",
@@ -374,44 +374,44 @@
         0,
         0,
         3,
-        0,
-        7,
-        -7
+        2,
+        6,
+        -4
       ]
     ],
     "I": [
       [
         "Alemania",
-        7,
+        9,
         3,
-        2,
-        1,
+        3,
         0,
-        7,
+        0,
+        6,
         1,
-        6
+        5
       ],
       [
         "Senegal",
-        7,
-        3,
-        2,
-        1,
-        0,
         4,
+        3,
         1,
-        3
+        1,
+        1,
+        4,
+        4,
+        0
       ],
       [
         "Chequia",
-        3,
+        4,
         3,
         1,
-        0,
-        2,
+        1,
+        1,
         3,
-        6,
-        -3
+        4,
+        -1
       ],
       [
         "Haití",
@@ -421,32 +421,21 @@
         0,
         3,
         2,
-        8,
-        -6
+        6,
+        -4
       ]
     ],
     "J": [
       [
-        "Uzbekistán",
-        7,
-        3,
-        2,
-        1,
-        0,
-        5,
-        0,
-        5
-      ],
-      [
         "Noruega",
-        6,
+        9,
         3,
-        2,
+        3,
         0,
+        0,
+        6,
         1,
-        5,
-        2,
-        3
+        5
       ],
       [
         "Paraguay",
@@ -455,9 +444,20 @@
         1,
         1,
         1,
-        2,
-        2,
+        4,
+        4,
         0
+      ],
+      [
+        "Uzbekistán",
+        4,
+        3,
+        1,
+        1,
+        1,
+        3,
+        4,
+        -1
       ],
       [
         "Sudáfrica",
@@ -466,9 +466,9 @@
         0,
         0,
         3,
-        0,
-        8,
-        -8
+        2,
+        6,
+        -4
       ]
     ],
     "K": [
@@ -479,20 +479,9 @@
         3,
         0,
         0,
-        12,
-        0,
-        12
-      ],
-      [
-        "Curazao",
-        4,
-        3,
+        6,
         1,
-        1,
-        1,
-        3,
-        3,
-        0
+        5
       ],
       [
         "Turquía",
@@ -501,66 +490,77 @@
         1,
         1,
         1,
-        2,
-        5,
-        -3
+        4,
+        4,
+        0
       ],
       [
         "RD Congo",
-        0,
-        3,
-        0,
-        0,
+        4,
         3,
         1,
-        10,
-        -9
+        1,
+        1,
+        3,
+        4,
+        -1
+      ],
+      [
+        "Curazao",
+        0,
+        3,
+        0,
+        0,
+        3,
+        2,
+        6,
+        -4
       ]
     ],
     "L": [
       [
         "Croacia",
-        7,
+        9,
         3,
+        3,
+        0,
+        0,
+        6,
         2,
-        1,
-        0,
-        7,
-        0,
-        7
+        4
       ],
       [
         "Australia",
-        4,
+        6,
         3,
-        1,
-        1,
-        1,
-        3,
-        3,
-        0
-      ],
-      [
-        "Qatar",
         2,
-        3,
         0,
+        1,
+        5,
         2,
-        1,
-        1,
-        4,
-        -3
+        3
       ],
       [
         "Panamá",
-        2,
         3,
+        3,
+        1,
         0,
         2,
-        1,
-        1,
+        3,
         5,
-        -4
+        -2
+      ],
+      [
+        "Qatar",
+        0,
+        3,
+        0,
+        0,
+        3,
+        1,
+        6,
+        -5
       ]
     ]
   },
@@ -571,64 +571,64 @@
     "Inglaterra",
     "Colombia",
     "Portugal",
-    "Austria",
-    "Suecia",
+    "Brasil",
+    "Países Bajos",
     "Alemania",
-    "Uzbekistán",
+    "Noruega",
     "Japón",
     "Croacia",
     "México",
-    "Cabo Verde",
-    "Bélgica",
-    "Escocia",
+    "Suiza",
+    "República de Corea",
+    "Marruecos",
     "Ecuador",
     "Uruguay",
-    "Costa de Marfil",
-    "Países Bajos",
-    "Senegal",
-    "Noruega",
-    "Curazao",
-    "Australia",
+    "Austria",
     "Estados Unidos",
-    "Brasil",
-    "Marruecos",
+    "Senegal",
     "Paraguay",
-    "Argelia",
     "Turquía",
+    "Australia",
     "Canadá",
-    "Irán"
+    "Bélgica",
+    "Escocia",
+    "Irán",
+    "Suecia",
+    "Chequia",
+    "Uzbekistán",
+    "RD Congo"
   ],
   "octavos": [
     "España",
     "Francia",
     "Portugal",
-    "Suecia",
-    "Alemania",
-    "Japón",
-    "Cabo Verde",
-    "Escocia",
-    "Uruguay",
-    "Países Bajos",
-    "Senegal",
-    "Australia",
     "Brasil",
+    "Noruega",
+    "Croacia",
+    "Suiza",
     "Marruecos",
+    "Ecuador",
+    "Austria",
+    "Paraguay",
     "Turquía",
-    "Canadá"
+    "Bélgica",
+    "Escocia",
+    "Chequia",
+    "Uzbekistán"
   ],
   "cuartos": [
     "España",
-    "Portugal",
-    "Japón",
-    "Escocia",
-    "Países Bajos",
-    "Senegal",
     "Brasil",
-    "Turquía"
+    "Noruega",
+    "Suiza",
+    "Ecuador",
+    "Paraguay",
+    "Bélgica",
+    "Chequia"
   ],
   "final_lista": [
     "España",
-    "Países Bajos"
+    "Bélgica"
   ],
   "partidos": [
     {
@@ -636,48 +636,48 @@
       "local": "Argentina",
       "visitante": "México",
       "ganador": "Argentina",
-      "goles_local": 1,
-      "goles_visitante": 0
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo A",
       "local": "Argentina",
       "visitante": "Argelia",
-      "ganador": "Empate",
-      "goles_local": 1,
-      "goles_visitante": 1
+      "ganador": "Argentina",
+      "goles_local": 2,
+      "goles_visitante": 0
     },
     {
       "ronda": "Grupo A",
       "local": "Argentina",
       "visitante": "Jordania",
       "ganador": "Argentina",
-      "goles_local": 1,
+      "goles_local": 2,
       "goles_visitante": 0
     },
     {
       "ronda": "Grupo A",
       "local": "México",
       "visitante": "Argelia",
-      "ganador": "México",
-      "goles_local": 4,
+      "ganador": "Empate",
+      "goles_local": 1,
       "goles_visitante": 1
     },
     {
       "ronda": "Grupo A",
       "local": "México",
       "visitante": "Jordania",
-      "ganador": "Empate",
-      "goles_local": 0,
-      "goles_visitante": 0
+      "ganador": "México",
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo A",
       "local": "Argelia",
       "visitante": "Jordania",
-      "ganador": "Argelia",
-      "goles_local": 2,
-      "goles_visitante": 0
+      "ganador": "Empate",
+      "goles_local": 1,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo B",
@@ -685,7 +685,7 @@
       "visitante": "Suiza",
       "ganador": "España",
       "goles_local": 2,
-      "goles_visitante": 0
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo B",
@@ -693,31 +693,31 @@
       "visitante": "Canadá",
       "ganador": "España",
       "goles_local": 2,
-      "goles_visitante": 0
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo B",
       "local": "España",
       "visitante": "Cabo Verde",
-      "ganador": "Cabo Verde",
-      "goles_local": 0,
-      "goles_visitante": 1
+      "ganador": "España",
+      "goles_local": 2,
+      "goles_visitante": 0
     },
     {
       "ronda": "Grupo B",
       "local": "Suiza",
       "visitante": "Canadá",
-      "ganador": "Suiza",
-      "goles_local": 2,
+      "ganador": "Empate",
+      "goles_local": 1,
       "goles_visitante": 1
     },
     {
       "ronda": "Grupo B",
       "local": "Suiza",
       "visitante": "Cabo Verde",
-      "ganador": "Cabo Verde",
-      "goles_local": 0,
-      "goles_visitante": 1
+      "ganador": "Suiza",
+      "goles_local": 2,
+      "goles_visitante": 0
     },
     {
       "ronda": "Grupo B",
@@ -732,39 +732,39 @@
       "local": "Francia",
       "visitante": "Bélgica",
       "ganador": "Francia",
-      "goles_local": 4,
-      "goles_visitante": 1
-    },
-    {
-      "ronda": "Grupo C",
-      "local": "Francia",
-      "visitante": "República de Corea",
-      "ganador": "Francia",
-      "goles_local": 7,
-      "goles_visitante": 1
-    },
-    {
-      "ronda": "Grupo C",
-      "local": "Francia",
-      "visitante": "Bosnia y Herzegovina",
-      "ganador": "Francia",
-      "goles_local": 3,
-      "goles_visitante": 1
-    },
-    {
-      "ronda": "Grupo C",
-      "local": "Bélgica",
-      "visitante": "República de Corea",
-      "ganador": "Bélgica",
       "goles_local": 2,
       "goles_visitante": 1
     },
     {
       "ronda": "Grupo C",
+      "local": "Francia",
+      "visitante": "República de Corea",
+      "ganador": "Francia",
+      "goles_local": 2,
+      "goles_visitante": 1
+    },
+    {
+      "ronda": "Grupo C",
+      "local": "Francia",
+      "visitante": "Bosnia y Herzegovina",
+      "ganador": "Francia",
+      "goles_local": 2,
+      "goles_visitante": 0
+    },
+    {
+      "ronda": "Grupo C",
+      "local": "Bélgica",
+      "visitante": "República de Corea",
+      "ganador": "Empate",
+      "goles_local": 1,
+      "goles_visitante": 1
+    },
+    {
+      "ronda": "Grupo C",
       "local": "Bélgica",
       "visitante": "Bosnia y Herzegovina",
       "ganador": "Bélgica",
-      "goles_local": 3,
+      "goles_local": 2,
       "goles_visitante": 1
     },
     {
@@ -772,8 +772,8 @@
       "local": "República de Corea",
       "visitante": "Bosnia y Herzegovina",
       "ganador": "República de Corea",
-      "goles_local": 3,
-      "goles_visitante": 1
+      "goles_local": 2,
+      "goles_visitante": 0
     },
     {
       "ronda": "Grupo D",
@@ -781,23 +781,23 @@
       "visitante": "Marruecos",
       "ganador": "Inglaterra",
       "goles_local": 2,
-      "goles_visitante": 0
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo D",
       "local": "Inglaterra",
       "visitante": "Escocia",
       "ganador": "Inglaterra",
-      "goles_local": 3,
-      "goles_visitante": 0
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo D",
       "local": "Inglaterra",
       "visitante": "Arabia Saudí",
       "ganador": "Inglaterra",
-      "goles_local": 3,
-      "goles_visitante": 0
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo D",
@@ -820,16 +820,16 @@
       "local": "Escocia",
       "visitante": "Arabia Saudí",
       "ganador": "Escocia",
-      "goles_local": 5,
-      "goles_visitante": 0
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo E",
       "local": "Colombia",
       "visitante": "Ecuador",
       "ganador": "Colombia",
-      "goles_local": 1,
-      "goles_visitante": 0
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo E",
@@ -851,8 +851,8 @@
       "ronda": "Grupo E",
       "local": "Ecuador",
       "visitante": "Irán",
-      "ganador": "Ecuador",
-      "goles_local": 2,
+      "ganador": "Empate",
+      "goles_local": 1,
       "goles_visitante": 1
     },
     {
@@ -860,7 +860,7 @@
       "local": "Ecuador",
       "visitante": "Iraq",
       "ganador": "Ecuador",
-      "goles_local": 4,
+      "goles_local": 2,
       "goles_visitante": 0
     },
     {
@@ -868,72 +868,72 @@
       "local": "Irán",
       "visitante": "Iraq",
       "ganador": "Irán",
-      "goles_local": 1,
-      "goles_visitante": 0
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo F",
       "local": "Portugal",
       "visitante": "Uruguay",
+      "ganador": "Portugal",
+      "goles_local": 2,
+      "goles_visitante": 0
+    },
+    {
+      "ronda": "Grupo F",
+      "local": "Portugal",
+      "visitante": "Egipto",
+      "ganador": "Portugal",
+      "goles_local": 2,
+      "goles_visitante": 0
+    },
+    {
+      "ronda": "Grupo F",
+      "local": "Portugal",
+      "visitante": "Ghana",
+      "ganador": "Portugal",
+      "goles_local": 3,
+      "goles_visitante": 1
+    },
+    {
+      "ronda": "Grupo F",
+      "local": "Uruguay",
+      "visitante": "Egipto",
+      "ganador": "Empate",
+      "goles_local": 1,
+      "goles_visitante": 1
+    },
+    {
+      "ronda": "Grupo F",
+      "local": "Uruguay",
+      "visitante": "Ghana",
       "ganador": "Uruguay",
-      "goles_local": 0,
-      "goles_visitante": 3
-    },
-    {
-      "ronda": "Grupo F",
-      "local": "Portugal",
-      "visitante": "Egipto",
-      "ganador": "Portugal",
-      "goles_local": 4,
-      "goles_visitante": 0
-    },
-    {
-      "ronda": "Grupo F",
-      "local": "Portugal",
-      "visitante": "Ghana",
-      "ganador": "Portugal",
-      "goles_local": 4,
-      "goles_visitante": 0
-    },
-    {
-      "ronda": "Grupo F",
-      "local": "Uruguay",
-      "visitante": "Egipto",
-      "ganador": "Empate",
-      "goles_local": 0,
-      "goles_visitante": 0
-    },
-    {
-      "ronda": "Grupo F",
-      "local": "Uruguay",
-      "visitante": "Ghana",
-      "ganador": "Empate",
-      "goles_local": 0,
-      "goles_visitante": 0
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo F",
       "local": "Egipto",
       "visitante": "Ghana",
       "ganador": "Empate",
-      "goles_local": 2,
-      "goles_visitante": 2
+      "goles_local": 1,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo G",
       "local": "Brasil",
       "visitante": "Austria",
-      "ganador": "Austria",
-      "goles_local": 1,
-      "goles_visitante": 2
+      "ganador": "Brasil",
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo G",
       "local": "Brasil",
       "visitante": "Costa de Marfil",
-      "ganador": "Empate",
-      "goles_local": 1,
-      "goles_visitante": 1
+      "ganador": "Brasil",
+      "goles_local": 2,
+      "goles_visitante": 0
     },
     {
       "ronda": "Grupo G",
@@ -947,16 +947,16 @@
       "ronda": "Grupo G",
       "local": "Austria",
       "visitante": "Costa de Marfil",
-      "ganador": "Empate",
-      "goles_local": 0,
-      "goles_visitante": 0
+      "ganador": "Austria",
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo G",
       "local": "Austria",
       "visitante": "Túnez",
       "ganador": "Austria",
-      "goles_local": 4,
+      "goles_local": 2,
       "goles_visitante": 0
     },
     {
@@ -971,32 +971,32 @@
       "ronda": "Grupo H",
       "local": "Países Bajos",
       "visitante": "Estados Unidos",
-      "ganador": "Estados Unidos",
-      "goles_local": 0,
-      "goles_visitante": 1
-    },
-    {
-      "ronda": "Grupo H",
-      "local": "Países Bajos",
-      "visitante": "Suecia",
-      "ganador": "Países Bajos",
-      "goles_local": 2,
-      "goles_visitante": 0
-    },
-    {
-      "ronda": "Grupo H",
-      "local": "Países Bajos",
-      "visitante": "Nueva Zelanda",
       "ganador": "Países Bajos",
       "goles_local": 1,
       "goles_visitante": 0
     },
     {
       "ronda": "Grupo H",
+      "local": "Países Bajos",
+      "visitante": "Suecia",
+      "ganador": "Países Bajos",
+      "goles_local": 2,
+      "goles_visitante": 0
+    },
+    {
+      "ronda": "Grupo H",
+      "local": "Países Bajos",
+      "visitante": "Nueva Zelanda",
+      "ganador": "Países Bajos",
+      "goles_local": 2,
+      "goles_visitante": 0
+    },
+    {
+      "ronda": "Grupo H",
       "local": "Estados Unidos",
       "visitante": "Suecia",
-      "ganador": "Suecia",
-      "goles_local": 0,
+      "ganador": "Empate",
+      "goles_local": 1,
       "goles_visitante": 1
     },
     {
@@ -1005,22 +1005,22 @@
       "visitante": "Nueva Zelanda",
       "ganador": "Estados Unidos",
       "goles_local": 2,
-      "goles_visitante": 0
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo H",
       "local": "Suecia",
       "visitante": "Nueva Zelanda",
       "ganador": "Suecia",
-      "goles_local": 4,
-      "goles_visitante": 0
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo I",
       "local": "Alemania",
       "visitante": "Senegal",
-      "ganador": "Empate",
-      "goles_local": 1,
+      "ganador": "Alemania",
+      "goles_local": 2,
       "goles_visitante": 1
     },
     {
@@ -1036,32 +1036,32 @@
       "local": "Alemania",
       "visitante": "Haití",
       "ganador": "Alemania",
-      "goles_local": 4,
-      "goles_visitante": 0
-    },
-    {
-      "ronda": "Grupo I",
-      "local": "Senegal",
-      "visitante": "Chequia",
-      "ganador": "Senegal",
       "goles_local": 2,
       "goles_visitante": 0
     },
     {
       "ronda": "Grupo I",
       "local": "Senegal",
+      "visitante": "Chequia",
+      "ganador": "Empate",
+      "goles_local": 1,
+      "goles_visitante": 1
+    },
+    {
+      "ronda": "Grupo I",
+      "local": "Senegal",
       "visitante": "Haití",
       "ganador": "Senegal",
-      "goles_local": 1,
-      "goles_visitante": 0
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo I",
       "local": "Chequia",
       "visitante": "Haití",
       "ganador": "Chequia",
-      "goles_local": 3,
-      "goles_visitante": 2
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo J",
@@ -1069,22 +1069,22 @@
       "visitante": "Paraguay",
       "ganador": "Noruega",
       "goles_local": 2,
-      "goles_visitante": 0
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo J",
       "local": "Noruega",
       "visitante": "Uzbekistán",
-      "ganador": "Uzbekistán",
-      "goles_local": 0,
-      "goles_visitante": 2
+      "ganador": "Noruega",
+      "goles_local": 2,
+      "goles_visitante": 0
     },
     {
       "ronda": "Grupo J",
       "local": "Noruega",
       "visitante": "Sudáfrica",
       "ganador": "Noruega",
-      "goles_local": 3,
+      "goles_local": 2,
       "goles_visitante": 0
     },
     {
@@ -1092,8 +1092,8 @@
       "local": "Paraguay",
       "visitante": "Uzbekistán",
       "ganador": "Empate",
-      "goles_local": 0,
-      "goles_visitante": 0
+      "goles_local": 1,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo J",
@@ -1101,30 +1101,30 @@
       "visitante": "Sudáfrica",
       "ganador": "Paraguay",
       "goles_local": 2,
-      "goles_visitante": 0
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo J",
       "local": "Uzbekistán",
       "visitante": "Sudáfrica",
       "ganador": "Uzbekistán",
-      "goles_local": 3,
-      "goles_visitante": 0
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo K",
       "local": "Japón",
       "visitante": "Turquía",
       "ganador": "Japón",
-      "goles_local": 4,
-      "goles_visitante": 0
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo K",
       "local": "Japón",
       "visitante": "RD Congo",
       "ganador": "Japón",
-      "goles_local": 5,
+      "goles_local": 2,
       "goles_visitante": 0
     },
     {
@@ -1132,63 +1132,63 @@
       "local": "Japón",
       "visitante": "Curazao",
       "ganador": "Japón",
-      "goles_local": 3,
+      "goles_local": 2,
       "goles_visitante": 0
     },
     {
       "ronda": "Grupo K",
       "local": "Turquía",
       "visitante": "RD Congo",
-      "ganador": "Turquía",
-      "goles_local": 2,
+      "ganador": "Empate",
+      "goles_local": 1,
       "goles_visitante": 1
     },
     {
       "ronda": "Grupo K",
       "local": "Turquía",
       "visitante": "Curazao",
-      "ganador": "Empate",
-      "goles_local": 0,
-      "goles_visitante": 0
+      "ganador": "Turquía",
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo K",
       "local": "RD Congo",
       "visitante": "Curazao",
-      "ganador": "Curazao",
-      "goles_local": 0,
-      "goles_visitante": 3
+      "ganador": "RD Congo",
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo L",
       "local": "Croacia",
       "visitante": "Australia",
       "ganador": "Croacia",
-      "goles_local": 3,
-      "goles_visitante": 0
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo L",
       "local": "Croacia",
       "visitante": "Panamá",
       "ganador": "Croacia",
-      "goles_local": 4,
-      "goles_visitante": 0
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "Grupo L",
       "local": "Croacia",
       "visitante": "Qatar",
-      "ganador": "Empate",
-      "goles_local": 0,
+      "ganador": "Croacia",
+      "goles_local": 2,
       "goles_visitante": 0
     },
     {
       "ronda": "Grupo L",
       "local": "Australia",
       "visitante": "Panamá",
-      "ganador": "Empate",
-      "goles_local": 0,
+      "ganador": "Australia",
+      "goles_local": 2,
       "goles_visitante": 0
     },
     {
@@ -1196,15 +1196,15 @@
       "local": "Australia",
       "visitante": "Qatar",
       "ganador": "Australia",
-      "goles_local": 3,
+      "goles_local": 2,
       "goles_visitante": 0
     },
     {
       "ronda": "Grupo L",
       "local": "Panamá",
       "visitante": "Qatar",
-      "ganador": "Empate",
-      "goles_local": 1,
+      "ganador": "Panamá",
+      "goles_local": 2,
       "goles_visitante": 1
     },
     {
@@ -1212,7 +1212,7 @@
       "local": "Argentina",
       "visitante": "España",
       "ganador": "España",
-      "goles_local": 0,
+      "goles_local": 1,
       "goles_visitante": 2
     },
     {
@@ -1220,8 +1220,8 @@
       "local": "Francia",
       "visitante": "Inglaterra",
       "ganador": "Francia",
-      "goles_local": 5,
-      "goles_visitante": 0
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "32avos (Ronda de 32)",
@@ -1229,109 +1229,109 @@
       "visitante": "Portugal",
       "ganador": "Portugal",
       "goles_local": 1,
-      "goles_visitante": 3
+      "goles_visitante": 2
     },
     {
       "ronda": "32avos (Ronda de 32)",
-      "local": "Austria",
-      "visitante": "Suecia",
-      "ganador": "Suecia",
+      "local": "Brasil",
+      "visitante": "Países Bajos",
+      "ganador": "Brasil",
+      "goles_local": 2,
+      "goles_visitante": 1
+    },
+    {
+      "ronda": "32avos (Ronda de 32)",
+      "local": "Alemania",
+      "visitante": "Noruega",
+      "ganador": "Noruega",
       "goles_local": 1,
       "goles_visitante": 2
     },
     {
       "ronda": "32avos (Ronda de 32)",
-      "local": "Alemania",
-      "visitante": "Uzbekistán",
-      "ganador": "Alemania",
-      "goles_local": 4,
-      "goles_visitante": 0
-    },
-    {
-      "ronda": "32avos (Ronda de 32)",
       "local": "Japón",
       "visitante": "Croacia",
-      "ganador": "Japón",
-      "goles_local": 2,
-      "goles_visitante": 1
+      "ganador": "Croacia",
+      "goles_local": 1,
+      "goles_visitante": 2
     },
     {
       "ronda": "32avos (Ronda de 32)",
       "local": "México",
-      "visitante": "Cabo Verde",
-      "ganador": "Cabo Verde",
-      "goles_local": 0,
-      "goles_visitante": 3
+      "visitante": "Suiza",
+      "ganador": "Suiza",
+      "goles_local": 1,
+      "goles_visitante": 2
     },
     {
       "ronda": "32avos (Ronda de 32)",
-      "local": "Bélgica",
-      "visitante": "Escocia",
-      "ganador": "Escocia",
-      "goles_local": 0,
-      "goles_visitante": 1
+      "local": "República de Corea",
+      "visitante": "Marruecos",
+      "ganador": "Marruecos",
+      "goles_local": 1,
+      "goles_visitante": 2
     },
     {
       "ronda": "32avos (Ronda de 32)",
       "local": "Ecuador",
       "visitante": "Uruguay",
-      "ganador": "Uruguay",
-      "goles_local": 0,
+      "ganador": "Ecuador",
+      "goles_local": 2,
       "goles_visitante": 1
     },
     {
       "ronda": "32avos (Ronda de 32)",
-      "local": "Costa de Marfil",
-      "visitante": "Países Bajos",
-      "ganador": "Países Bajos",
-      "goles_local": 0,
-      "goles_visitante": 5
+      "local": "Austria",
+      "visitante": "Estados Unidos",
+      "ganador": "Austria",
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "32avos (Ronda de 32)",
       "local": "Senegal",
-      "visitante": "Noruega",
-      "ganador": "Senegal",
+      "visitante": "Paraguay",
+      "ganador": "Paraguay",
       "goles_local": 1,
-      "goles_visitante": 0
+      "goles_visitante": 2
     },
     {
       "ronda": "32avos (Ronda de 32)",
-      "local": "Curazao",
+      "local": "Turquía",
       "visitante": "Australia",
-      "ganador": "Australia",
-      "goles_local": 0,
+      "ganador": "Turquía",
+      "goles_local": 2,
       "goles_visitante": 1
     },
     {
       "ronda": "32avos (Ronda de 32)",
-      "local": "Estados Unidos",
-      "visitante": "Brasil",
-      "ganador": "Brasil",
-      "goles_local": 2,
-      "goles_visitante": 4
-    },
-    {
-      "ronda": "32avos (Ronda de 32)",
-      "local": "Marruecos",
-      "visitante": "Paraguay",
-      "ganador": "Marruecos",
-      "goles_local": 4,
-      "goles_visitante": 0
-    },
-    {
-      "ronda": "32avos (Ronda de 32)",
-      "local": "Argelia",
-      "visitante": "Turquía",
-      "ganador": "Turquía",
-      "goles_local": 0,
-      "goles_visitante": 3
-    },
-    {
-      "ronda": "32avos (Ronda de 32)",
       "local": "Canadá",
+      "visitante": "Bélgica",
+      "ganador": "Bélgica",
+      "goles_local": 1,
+      "goles_visitante": 2
+    },
+    {
+      "ronda": "32avos (Ronda de 32)",
+      "local": "Escocia",
       "visitante": "Irán",
-      "ganador": "Canadá",
+      "ganador": "Escocia",
+      "goles_local": 2,
+      "goles_visitante": 1
+    },
+    {
+      "ronda": "32avos (Ronda de 32)",
+      "local": "Suecia",
+      "visitante": "Chequia",
+      "ganador": "Chequia",
+      "goles_local": 1,
+      "goles_visitante": 2
+    },
+    {
+      "ronda": "32avos (Ronda de 32)",
+      "local": "Uzbekistán",
+      "visitante": "RD Congo",
+      "ganador": "Uzbekistán",
       "goles_local": 2,
       "goles_visitante": 1
     },
@@ -1340,117 +1340,117 @@
       "local": "España",
       "visitante": "Francia",
       "ganador": "España",
-      "goles_local": 1,
-      "goles_visitante": 0
+      "goles_local": 2,
+      "goles_visitante": 1
     },
     {
       "ronda": "16avos (Octavos)",
       "local": "Portugal",
-      "visitante": "Suecia",
-      "ganador": "Portugal",
-      "goles_local": 1,
-      "goles_visitante": 0
-    },
-    {
-      "ronda": "16avos (Octavos)",
-      "local": "Alemania",
-      "visitante": "Japón",
-      "ganador": "Japón",
-      "goles_local": 0,
-      "goles_visitante": 1
-    },
-    {
-      "ronda": "16avos (Octavos)",
-      "local": "Cabo Verde",
-      "visitante": "Escocia",
-      "ganador": "Escocia",
-      "goles_local": 0,
-      "goles_visitante": 2
-    },
-    {
-      "ronda": "16avos (Octavos)",
-      "local": "Uruguay",
-      "visitante": "Países Bajos",
-      "ganador": "Países Bajos",
-      "goles_local": 0,
-      "goles_visitante": 1
-    },
-    {
-      "ronda": "16avos (Octavos)",
-      "local": "Senegal",
-      "visitante": "Australia",
-      "ganador": "Senegal",
-      "goles_local": 2,
-      "goles_visitante": 1
-    },
-    {
-      "ronda": "16avos (Octavos)",
-      "local": "Brasil",
-      "visitante": "Marruecos",
-      "ganador": "Brasil",
-      "goles_local": 2,
-      "goles_visitante": 1
-    },
-    {
-      "ronda": "16avos (Octavos)",
-      "local": "Turquía",
-      "visitante": "Canadá",
-      "ganador": "Turquía",
-      "goles_local": 1,
-      "goles_visitante": 0
-    },
-    {
-      "ronda": "8avos (Cuartos)",
-      "local": "España",
-      "visitante": "Portugal",
-      "ganador": "España",
-      "goles_local": 3,
-      "goles_visitante": 2
-    },
-    {
-      "ronda": "8avos (Cuartos)",
-      "local": "Japón",
-      "visitante": "Escocia",
-      "ganador": "Japón",
-      "goles_local": 2,
-      "goles_visitante": 1
-    },
-    {
-      "ronda": "8avos (Cuartos)",
-      "local": "Países Bajos",
-      "visitante": "Senegal",
-      "ganador": "Países Bajos",
-      "goles_local": 2,
-      "goles_visitante": 1
-    },
-    {
-      "ronda": "8avos (Cuartos)",
-      "local": "Brasil",
-      "visitante": "Turquía",
-      "ganador": "Brasil",
-      "goles_local": 1,
-      "goles_visitante": 0
-    },
-    {
-      "ronda": "4avos (Semifinales)",
-      "local": "España",
-      "visitante": "Japón",
-      "ganador": "España",
-      "goles_local": 1,
-      "goles_visitante": 0
-    },
-    {
-      "ronda": "4avos (Semifinales)",
-      "local": "Países Bajos",
       "visitante": "Brasil",
-      "ganador": "Países Bajos",
+      "ganador": "Brasil",
+      "goles_local": 1,
+      "goles_visitante": 2
+    },
+    {
+      "ronda": "16avos (Octavos)",
+      "local": "Noruega",
+      "visitante": "Croacia",
+      "ganador": "Noruega",
       "goles_local": 2,
       "goles_visitante": 1
+    },
+    {
+      "ronda": "16avos (Octavos)",
+      "local": "Suiza",
+      "visitante": "Marruecos",
+      "ganador": "Suiza",
+      "goles_local": 2,
+      "goles_visitante": 1
+    },
+    {
+      "ronda": "16avos (Octavos)",
+      "local": "Ecuador",
+      "visitante": "Austria",
+      "ganador": "Ecuador",
+      "goles_local": 2,
+      "goles_visitante": 1
+    },
+    {
+      "ronda": "16avos (Octavos)",
+      "local": "Paraguay",
+      "visitante": "Turquía",
+      "ganador": "Paraguay",
+      "goles_local": 2,
+      "goles_visitante": 1
+    },
+    {
+      "ronda": "16avos (Octavos)",
+      "local": "Bélgica",
+      "visitante": "Escocia",
+      "ganador": "Bélgica",
+      "goles_local": 2,
+      "goles_visitante": 1
+    },
+    {
+      "ronda": "16avos (Octavos)",
+      "local": "Chequia",
+      "visitante": "Uzbekistán",
+      "ganador": "Chequia",
+      "goles_local": 2,
+      "goles_visitante": 1
+    },
+    {
+      "ronda": "8avos (Cuartos)",
+      "local": "España",
+      "visitante": "Brasil",
+      "ganador": "España",
+      "goles_local": 2,
+      "goles_visitante": 1
+    },
+    {
+      "ronda": "8avos (Cuartos)",
+      "local": "Noruega",
+      "visitante": "Suiza",
+      "ganador": "Noruega",
+      "goles_local": 2,
+      "goles_visitante": 1
+    },
+    {
+      "ronda": "8avos (Cuartos)",
+      "local": "Ecuador",
+      "visitante": "Paraguay",
+      "ganador": "Ecuador",
+      "goles_local": 2,
+      "goles_visitante": 1
+    },
+    {
+      "ronda": "8avos (Cuartos)",
+      "local": "Bélgica",
+      "visitante": "Chequia",
+      "ganador": "Bélgica",
+      "goles_local": 2,
+      "goles_visitante": 1
+    },
+    {
+      "ronda": "4avos (Semifinales)",
+      "local": "España",
+      "visitante": "Noruega",
+      "ganador": "España",
+      "goles_local": 2,
+      "goles_visitante": 1
+    },
+    {
+      "ronda": "4avos (Semifinales)",
+      "local": "Ecuador",
+      "visitante": "Bélgica",
+      "ganador": "Bélgica",
+      "goles_local": 1,
+      "goles_visitante": 2
     },
     {
       "ronda": "Final",
       "local": "España",
-      "visitante": "Países Bajos",
+      "visitante": "Bélgica",
       "ganador": "España",
       "goles_local": 2,
       "goles_visitante": 0
@@ -1463,36 +1463,36 @@
     "D": "Inglaterra",
     "E": "Colombia",
     "F": "Portugal",
-    "G": "Austria",
-    "H": "Suecia",
+    "G": "Brasil",
+    "H": "Países Bajos",
     "I": "Alemania",
-    "J": "Uzbekistán",
+    "J": "Noruega",
     "K": "Japón",
     "L": "Croacia"
   },
   "segundos_grupo": {
     "A": "México",
-    "B": "Cabo Verde",
-    "C": "Bélgica",
-    "D": "Escocia",
+    "B": "Suiza",
+    "C": "República de Corea",
+    "D": "Marruecos",
     "E": "Ecuador",
     "F": "Uruguay",
-    "G": "Costa de Marfil",
-    "H": "Países Bajos",
+    "G": "Austria",
+    "H": "Estados Unidos",
     "I": "Senegal",
-    "J": "Noruega",
-    "K": "Curazao",
+    "J": "Paraguay",
+    "K": "Turquía",
     "L": "Australia"
   },
   "mejores_terceros": [
-    "Estados Unidos",
-    "Brasil",
-    "Marruecos",
-    "Paraguay",
-    "Argelia",
-    "Turquía",
     "Canadá",
-    "Irán"
+    "Bélgica",
+    "Escocia",
+    "Irán",
+    "Suecia",
+    "Chequia",
+    "Uzbekistán",
+    "RD Congo"
   ],
   "modelo_accuracy": 0.6790953545232273,
   "modelo_metrics": {
@@ -1504,15 +1504,8 @@
   },
   "simulaciones": 20,
   "frecuencia_campeones": {
-    "España": 4,
-    "Francia": 4,
-    "Inglaterra": 2,
-    "Argentina": 2,
-    "Noruega": 2,
-    "Brasil": 2,
-    "Suiza": 1,
-    "Países Bajos": 1,
-    "Austria": 1,
-    "Paraguay": 1
+    "España": 13,
+    "Argentina": 6,
+    "Francia": 1
   }
 }

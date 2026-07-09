@@ -18,17 +18,19 @@ def _get_elo(team: str, team_ratings: dict[str, float]) -> float:
     return team_ratings.get(team, 1500.0)
 
 
-def simular_partido(
-    equipo_a: str,
-    equipo_b: str,
-    modelo: Any,
-    team_ratings: dict[str, float],
+def _simular_winner(
+    equipo_a: str, equipo_b: str,
+    modelo: Any, team_ratings: dict[str, float],
+    noise_range: int = 3,
+    elo_blend: float = 0.80,
+    avg_goals: float = 2.5,
+    allow_draw: bool = False,
 ) -> tuple[str, int, int]:
     elo_a = _get_elo(equipo_a, team_ratings)
     elo_b = _get_elo(equipo_b, team_ratings)
 
-    noise_a = random.randint(-12, 12)
-    noise_b = random.randint(-12, 12)
+    noise_a = random.randint(-noise_range, noise_range)
+    noise_b = random.randint(-noise_range, noise_range)
     effective_elo_a = elo_a + noise_a
     effective_elo_b = elo_b + noise_b
 
@@ -53,77 +55,45 @@ def simular_partido(
     X = features_df[FEATURE_COLUMNS]
 
     prob_a = predecir_partido(modelo, X)
-    blend = 0.35 * prob_a + 0.65 * win_prob_elo
+    blend = (1 - elo_blend) * prob_a + elo_blend * win_prob_elo
 
-    avg_goals = 2.5
     expected_goals_a = avg_goals * blend
     expected_goals_b = avg_goals * (1 - blend)
 
-    goals_a = np.random.poisson(max(expected_goals_a, 0.3))
-    goals_b = np.random.poisson(max(expected_goals_b, 0.3))
+    goals_a = max(1, round(expected_goals_a + random.uniform(-0.4, 0.4)))
+    goals_b = max(0, round(expected_goals_b + random.uniform(-0.4, 0.4)))
 
-    if goals_a == goals_b:
-        if random.random() < 0.55:
-            goals_a += 1
+    if allow_draw:
+        if goals_a > goals_b:
+            return equipo_a, goals_a, goals_b
+        elif goals_b > goals_a:
+            return equipo_b, goals_a, goals_b
         else:
-            goals_b += 1
+            return "Empate", goals_a, goals_b
+    else:
+        if goals_a == goals_b:
+            if blend > 0.5:
+                goals_a += 1
+            else:
+                goals_b += 1
+        winner = equipo_a if goals_a > goals_b else equipo_b
+        return winner, goals_a, goals_b
 
-    winner = equipo_a if goals_a > goals_b else equipo_b
-    return winner, goals_a, goals_b
+
+def simular_partido(
+    equipo_a: str, equipo_b: str,
+    modelo: Any, team_ratings: dict[str, float],
+) -> tuple[str, int, int]:
+    return _simular_winner(equipo_a, equipo_b, modelo, team_ratings,
+                           noise_range=3, elo_blend=0.80, avg_goals=2.5, allow_draw=False)
 
 
 def simular_partido_grupo(
-    equipo_a: str,
-    equipo_b: str,
-    modelo: Any,
-    team_ratings: dict[str, float],
+    equipo_a: str, equipo_b: str,
+    modelo: Any, team_ratings: dict[str, float],
 ) -> tuple[str, int, int]:
-    elo_a = _get_elo(equipo_a, team_ratings)
-    elo_b = _get_elo(equipo_b, team_ratings)
-
-    noise_a = random.randint(-10, 10)
-    noise_b = random.randint(-10, 10)
-    effective_elo_a = elo_a + noise_a
-    effective_elo_b = elo_b + noise_b
-
-    elo_diff = effective_elo_a - effective_elo_b
-    win_prob_elo = 1 / (1 + 10 ** (-elo_diff / 400))
-
-    form_a = 5.0 + elo_diff / 400
-    form_b = 5.0 - elo_diff / 400
-
-    row = pd.DataFrame([{
-        "elo_home": effective_elo_a,
-        "elo_away": effective_elo_b,
-        "form_home": min(max(form_a, 0), 10),
-        "form_away": min(max(form_b, 0), 10),
-        "goals_home": 0,
-        "goals_away": 0,
-        "winner": equipo_a,
-        "home_team": equipo_a,
-        "away_team": equipo_b,
-    }])
-    features_df = construir_features(row)
-    X = features_df[FEATURE_COLUMNS]
-
-    prob_a = predecir_partido(modelo, X)
-    blend = 0.35 * prob_a + 0.65 * win_prob_elo
-
-    avg_goals = 2.4
-    expected_goals_a = avg_goals * blend
-    expected_goals_b = avg_goals * (1 - blend)
-
-    goals_a = np.random.poisson(max(expected_goals_a, 0.3))
-    goals_b = np.random.poisson(max(expected_goals_b, 0.3))
-
-    if goals_a > goals_b:
-        winner = equipo_a
-    elif goals_b > goals_a:
-        winner = equipo_b
-    else:
-        winner = "Empate"
-
-    return winner, goals_a, goals_b
+    return _simular_winner(equipo_a, equipo_b, modelo, team_ratings,
+                           noise_range=3, elo_blend=0.75, avg_goals=2.4, allow_draw=True)
 
 
 def construir_grupos_mundial(team_ratings: dict[str, float] | None = None) -> dict[str, list[str]]:
