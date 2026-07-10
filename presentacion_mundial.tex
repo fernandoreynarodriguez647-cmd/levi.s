@@ -1,0 +1,311 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+% ── Colores ──────────────────────────────────────────────
+\definecolor{azulnoche}{RGB}{10,15,45}
+\definecolor{azulmedio}{RGB}{20,40,90}
+\definecolor{azulclaro}{RGB}{40,80,160}
+\definecolor{blanco}{RGB}{255,255,255}
+\definecolor{acento}{RGB}{100,160,255}
+
+\usetheme{default}
+\usecolortheme{default}
+
+\setbeamercolor{background canvas}{bg=azulnoche}
+\setbeamercolor{normal text}{fg=blanco}
+\setbeamercolor{frametitle}{fg=blanco,bg=azulmedio}
+\setbeamercolor{title}{fg=blanco}
+\setbeamercolor{subtitle}{fg=acento}
+\setbeamercolor{author}{fg=acento}
+\setbeamercolor{institute}{fg=acento!70!white}
+\setbeamercolor{date}{fg=acento!60!white}
+\setbeamercolor{item}{fg=acento}
+\setbeamercolor{item projected}{fg=blanco,bg=azulclaro}
+\setbeamercolor{block title}{fg=blanco,bg=azulclaro}
+\setbeamercolor{block body}{fg=blanco,bg=azulmedio!60}
+\setbeamercolor{block title example}{fg=blanco,bg=azulclaro!80}
+\setbeamercolor{block body example}{fg=blanco,bg=azulmedio!50}
+\setbeamercolor{structure}{fg=acento}
+\setbeamercolor{section in toc}{fg=acento}
+\setbeamercolor{subsection in toc}{fg=acento!70!white}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace*{8pt}\vspace{4pt}}
+\setbeamertemplate{itemize items}[circle]
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows.meta,positioning,calc}
+
+% ── Documento ────────────────────────────────────────────
+\title{Predictor Mundial 2026}
+\subtitle{Modelo de predicci\'on basado en aprendizaje autom\'atico}
+\author{Fernando Reyna Rodr\'{\i}guez}
+\institute{Universidad Toribio Rodr\'{\i}guez de Mendoza\\Procesamiento de Lenguaje Natural}
+\date{\today}
+
+\begin{document}
+
+% ═══════════════════════════════════════════════════════════
+% PORTADA
+% ═══════════════════════════════════════════════════════════
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[azulmedio] (current page.north west) rectangle ([yshift=-4cm]current page.north east);
+  \fill[azulclaro!30] ([yshift=-4cm]current page.north west) rectangle ([yshift=-4.15cm]current page.north east);
+\end{tikzpicture}
+
+\vspace*{1.5cm}
+\begin{center}
+  {\Huge\bfseries Predictor Mundial 2026}\\[12pt]
+  {\Large\color{acento} Modelo de predicci\'on basado en aprendizaje autom\'atico}\\[30pt]
+  {\large\color{blanco} Fernando Reyna Rodr\'{\i}guez}\\[8pt]
+  {\color{acento} Universidad Toribio Rodr\'{\i}guez de Mendoza}\\[4pt]
+  {\color{acento!70!white} Procesamiento de Lenguaje Natural}\\[20pt]
+  {\small\color{acento!60!white} \today}
+\end{center}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════
+% OBJETIVO
+% ═══════════════════════════════════════════════════════════
+\begin{frame}{Objetivo del Proyecto}
+\begin{itemize}
+  \item Construir un pipeline de predicci\'on completo para el Mundial FIFA 2026.
+  \item Utilizar \textbf{aprendizaje autom\'atico} para estimar probabilidades de victoria.
+  \item Simular el torneo completo (fase de grupos y knockout) con \textbf{48 selecciones}.
+  \item Generar un dashboard interactivo para explorar resultados.
+\end{itemize}
+
+\vspace{12pt}
+\begin{block}{Idea central}
+Combinar predicciones de un modelo ML con el sistema de \textbf{Elo} para obtener probabilidades m\'as robustas en cada partido.
+\end{block}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════
+% MODELO
+% ═══════════════════════════════════════════════════════════
+\begin{frame}{Modelo de Predicci\'on}
+\begin{columns}[T]
+\begin{column}{0.52\textwidth}
+\textbf{\color{acento} Ensemble: Random Forest + XGBoost}
+
+\vspace{6pt}
+\begin{itemize}
+  \item \textbf{Random Forest}: 600 \'arboles, prof. m\'ax. 14
+  \item \textbf{XGBoost}: 400 \'arboles, prof. 6, ratio 0.05
+  \item Promedio de probabilidades de ambos modelos
+  \item Divisi\'on: 80\% train / 20\% test
+\end{itemize}
+\end{column}
+
+\begin{column}{0.45\textwidth}
+\begin{block}{M\'etricas}
+\begin{tabular}{lr}
+\toprule
+\textbf{M\'etrica} & \textbf{Valor} \\
+\midrule
+Accuracy    & 67.9\%  \\
+Precision   & 68.2\%  \\
+Recall      & 64.7\%  \\
+F1-Score    & 0.664   \\
+ROC-AUC     & 0.752   \\
+\bottomrule
+\end{tabular}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════
+% FEATURES
+% ═══════════════════════════════════════════════════════════
+\begin{frame}{Variables del Modelo (Features)}
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+\textbf{\color{acento} 10 variables de entrada:}
+\vspace{4pt}
+\begin{enumerate}
+  \item \texttt{elo\_diff} --- Diferencia de Elo
+  \item \texttt{form\_diff} --- Diferencia de forma reciente
+  \item \texttt{rank\_diff} --- Diferencia de ranking
+  \item \texttt{home\_advantage} --- Ventaja de local
+  \item \texttt{avg\_rating} --- Calidad promedio del partido
+\end{enumerate}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\vspace{22pt}
+\begin{enumerate}
+  \setcounter{enumi}{5}
+  \item \texttt{rating\_ratio} --- Fuerza relativa local
+  \item \texttt{elo\__squared} --- Elo al cuadrado
+  \item \texttt{abs\_elo\_diff} --- Brecha absoluta Elo
+  \item \texttt{form\_abs\_diff} --- Brecha absoluta forma
+  \item \texttt{elo\_power} --- Elo escalado (tanh)
+\end{enumerate}
+\end{column}
+\end{columns}
+
+\vspace{10pt}
+\begin{block}{Variable objetivo}
+\texttt{target = 1} si el equipo local gana, \texttt{0} en otro caso.\\
+\small{\color{acento!70!white} Datos desde 2018 $\cdot$ Ratings Elo de 244 equipos $\cdot$ Rankings FIFA de 211 equipos}
+\end{block}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════
+% SIMULACION DEL TORNEO
+% ═══════════════════════════════════════════════════════════
+\begin{frame}{Simulaci\'on del Torneo}
+\begin{columns}[T]
+\begin{column}{0.55\textwidth}
+\textbf{\color{acento} Formato Mundial 2026}
+
+\vspace{4pt}
+\begin{itemize}
+  \item \textbf{48 selecciones} en 12 grupos (A--L)
+  \item Sistema serpenteo por clasificaci\'on Elo
+  \item 72 partidos en fase de grupos
+  \item Eliminaci\'on directa: 32avos $\to$ Final
+  \item \textbf{103 partidos por simulaci\'on}
+  \item \textbf{20 simulaciones} con semillas distintas
+\end{itemize}
+\end{column}
+
+\begin{column}{0.42\textwidth}
+\begin{block}{F\'ormula de probabilidad}
+\vspace{-2pt}
+\[ P_{final} = \alpha \cdot P_{ML} + (1-\alpha) \cdot P_{Elo} \]
+
+\vspace{4pt}
+{\small\color{acento!70!white}
+$\alpha = 0.20$ (knockout)\\
+$\alpha = 0.25$ (grupos)\\[4pt]
+$P_{Elo} = \dfrac{1}{1 + 10^{-\Delta Elo/400}}$
+}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════
+% ESTRUCTURA DEL CODIGO
+% ═══════════════════════════════════════════════════════════
+\begin{frame}{Estructura del Proyecto}
+\begin{center}
+\begin{tikzpicture}[
+  box/.style={rectangle, rounded corners=3pt, draw=acento, fill=azulmedio,
+    text=blanco, minimum height=0.7cm, minimum width=2.2cm, font=\small\bfseries},
+  arr/.style={-{Stealth[length=5pt]}, thick, acento}
+]
+\node[box] (data) at (0,0) {data/};
+\node[box] (src) at (3,0) {src/};
+\node[box] (models) at (6,0) {models/};
+\node[box] (outputs) at (9,0) {outputs/};
+
+\node[box, fill=azulclaro] (app) at (4.5,-1.4) {app.py (Streamlit)};
+
+\draw[arr] (data) -- node[above,font=\tiny,fg=acento]{carga} (src);
+\draw[arr] (src) -- node[above,font=\tiny,fg=acento]{entrena} (models);
+\draw[arr] (models) -- node[above,font=\tiny,fg=acento]{predice} (outputs);
+\draw[arr] (src) -- (app);
+\draw[arr] (outputs) -- (app);
+\end{tikzpicture}
+\end{center}
+
+\vspace{8pt}
+\begin{itemize}
+  \item \texttt{src/data\_loader.py} --- Carga de datos hist\'oricos, Elo y FIFA
+  \item \texttt{src/features.py} --- Construcci\'on de las 10 variables
+  \item \texttt{src/models.py} --- Entrenamiento RF + XGBoost
+  \item \texttt{src/simulate\_bracket.py} --- Simulaci\'on del torneo completo
+  \item \texttt{predict\_world\_cup.py} --- Script principal (orchestrator)
+  \item \texttt{app.py} --- Dashboard interactivo con Streamlit
+\end{itemize}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════
+% RESULTADOS
+% ═══════════════════════════════════════════════════════════
+\begin{frame}{Resultados Predichos}
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+\begin{block}{Campe\'on}
+\vspace{4pt}
+\begin{center}
+{\Large\bfseries \color{blanco} \España}\\[4pt]
+{\small 13 de 20 simulaciones (65\%)}
+\end{center}
+\vspace{-4pt}
+\end{block}
+
+\vspace{6pt}
+\begin{block}{Subcampe\'on}
+\begin{center}
+{\Large\bfseries \color{blanco} B\'elgica}\\[2pt]
+{\small Final: Espa\~na 2 -- 0 B\'elgica}
+\end{center}
+\vspace{-4pt}
+\end{block}
+\end{column}
+
+\begin{column}{0.48\textwidth}
+\begin{block}{Frecuencia de campe\'on}
+\vspace{4pt}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Selecci\'on} & \textbf{Sim.} & \textbf{\%} \\
+\midrule
+\España     & 13 & 65\% \\
+\Argentina  & 6  & 30\% \\
+Francia     & 1  & 5\%  \\
+\bottomrule
+\end{tabular}
+\end{block}
+
+\vspace{6pt}
+{\small\color{acento}
+\textbf{Semifinalistas:} Espa\~na, Noruega, Ecuador, B\'elgica}
+\end{column}
+\end{columns}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════
+% CONCLUSIONES
+% ═══════════════════════════════════════════════════════════
+\begin{frame}{Conclusiones}
+\begin{itemize}
+  \item El modelo \textbf{ensemble} (RF + XGBoost) combinado con \textbf{Elo} logra un accuracy del 67.9\% y ROC-AUC de 0.752.
+  \item La combinaci\'on ponderada ML--Elo permite integrar el conocimiento estad\'{\i}stico cl\'asico con el aprendizaje autom\'atico.
+  \item El pipeline es \textbf{reproducible, modular y extensible} con datos reales.
+  \item El dashboard Streamlit permite explorar cada grupo, fase y partido de forma interactiva.
+\end{itemize}
+
+\vspace{10pt}
+\begin{block}{Mejoras futuras}
+\begin{itemize}
+  \item Incorporar datos reales de partidos y lesiones
+  \item A\~nadir m\'as features (posesi\'on, tiros, etc.)
+  \item Optimizar hiperpar\'ametros con Bayesian Search
+\end{itemize}
+\end{block}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════
+% CIERRE
+% ═══════════════════════════════════════════════════════════
+\begin{frame}[plain]
+\begin{center}
+\vspace*{3cm}
+{\Huge\bfseries \color{blanco} \'Gracias}\\[12pt]
+{\Large\color{acento} Fernando Reyna Rodr\'{\i}guez}\\[6pt]
+{\color{acento!70!white} fernando.reyna@ucontrm.edu.pe}
+\end{center}
+\end{frame}
+
+\end{document}
